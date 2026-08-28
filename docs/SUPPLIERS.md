@@ -6,6 +6,9 @@ CJdropshipping UK-warehouse SKUs at ~10 orders/week. Do not mix suppliers.
 **VERIFIED IN MAX'S ACCOUNT 2026-08-28** (wishlist screenshot): all four
 final picks are AliExpress Choice, delivery Sep 02–05 (5–8 days, tracked),
 prices — mat £20.46 · mirror £5.21 · grip trainer £1.26 · impact bag £6.12.
+CORRECTION 2026-08-28: Max reports real-world delivery runs ~3 weeks, not
+the 5–8 days the listings display. Site copy states 2–3 weeks; keep it that
+way until actual order data proves faster.
 All are on his wishlist ready to order. Crossed-out "was" prices are
 SuperDeals anchors; treat the paid prices above as steady-state but re-check
 if a promo lapses. Note: Choice free shipping usually needs a ~£10 order

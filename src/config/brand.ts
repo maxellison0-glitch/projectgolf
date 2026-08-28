@@ -13,7 +13,7 @@ export const BRAND = {
   tiktok: "",
   currency: "GBP" as const,
   freeShippingCopy: "Free UK tracked shipping on every order",
-  deliveryEstimate: "7–12 working days", // honest AliExpress-phase estimate; update per supplier
+  deliveryEstimate: "2–3 weeks", // Max's real-world observed timing (2026-08-28); listing said 5-8 days — trust experience
 } as const;
 
 export const COLORS = {

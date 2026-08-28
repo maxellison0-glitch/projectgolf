@@ -37,7 +37,7 @@ export type Product = {
 const SHARED_FAQS = [
   {
     q: "How long does delivery take?",
-    a: "Orders are dispatched within 24–48 hours and arrive in 7–12 working days with full tracking. You'll get the tracking number by email as soon as it ships.",
+    a: "Your order is dispatched within 24–48 hours and typically arrives within 2–3 weeks, fully tracked door to door. You'll get the tracking number by email as soon as it ships — and if it's ever late, message us and we'll sort it or refund you.",
   },
   {
     q: "What if it's not for me?",
