@@ -11,6 +11,13 @@ import { ProductGrid } from "@/components/ProductGrid";
  * buy box → benefits → how-it-works → social proof → FAQ → guarantee. */
 export function ProductLanding({ product }: { product: Product }) {
   const hasRealReviews = product.reviews.some((r) => r.author !== "—");
+  // Minimal shape for client components — keeps internal fields (COGS,
+  // supplier URLs) out of the serialized page payload.
+  const buyable = {
+    slug: product.slug,
+    name: product.name,
+    variants: product.variants,
+  };
 
   return (
     <div className="mx-auto max-w-6xl px-4">
@@ -26,7 +33,7 @@ export function ProductLanding({ product }: { product: Product }) {
           </h1>
           <p className="mt-4 font-voice text-lg italic text-ink/75">{product.subhook}</p>
           <div className="mt-7">
-            <BuyBox product={product} />
+            <BuyBox product={buyable} />
           </div>
         </div>
       </section>
@@ -126,7 +133,7 @@ export function ProductLanding({ product }: { product: Product }) {
         </a>
       </section>
 
-      <StickyATC product={product} />
+      <StickyATC product={buyable} />
     </div>
   );
 }

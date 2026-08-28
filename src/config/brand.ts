@@ -2,10 +2,10 @@
 // Max picks the real name/domain (see docs/RESEARCH.md for proposals).
 export const BRAND = {
   name: "House of Par",
-  legalName: "House of Par (working name)",
+  legalName: "House of Par",
   domain: "houseofpar.co.uk",
   tagline: "Home practice, held to a standard",
-  email: "support@houseofpar.co.uk",
+  email: "orders@houseofpar.co.uk",
   // UK distance selling requires a business identity + contact address on site.
   // TODO(Max): real trading address before launch.
   address: "Trading address TBC, United Kingdom",

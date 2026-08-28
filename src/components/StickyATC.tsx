@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { gbp } from "@/lib/format";
-import type { Product } from "@/data/products";
+import type { BuyableProduct } from "@/components/BuyBox";
 
 /* Mobile sticky add-to-cart bar — appears once the main buy box scrolls
  * out of view. Playbook: sticky ATC on mobile is table stakes. */
-export function StickyATC({ product }: { product: Product }) {
+export function StickyATC({ product }: { product: BuyableProduct }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
