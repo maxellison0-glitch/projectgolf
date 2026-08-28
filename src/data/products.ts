@@ -67,8 +67,8 @@ export const HERO_PRODUCT: Product = {
     {
       id: "bundle",
       label: "Mat + Alignment Mirror Bundle",
-      price: 8499,
-      compareAt: 9298, // mat £69.99 + mirror £22.99 bought separately
+      price: 7999, // 3.1× on £25.67 COGS
+      compareAt: 8798, // mat £69.99 + mirror £17.99 bought separately
       badge: "The complete putting studio — save £7.99",
     },
   ],
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
       "A compact putting mirror with sight lines for eye position, shoulder alignment and face angle. Pairs with any putting mat.",
     cogsPence: 521, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005008248111540.html",
-    variants: [{ id: "single", label: "Alignment Mirror", price: 2299 }],
+    variants: [{ id: "single", label: "Alignment Mirror", price: 1799, compareAt: 2299 }], // 22% off, 3.45×
     benefits: [
       { title: "Eyes over the ball", body: "The mirror shows instantly whether your eye line is where it should be — the setup fault most golfers never see." },
       { title: "Square face, square shoulders", body: "Sight lines check face angle and shoulder alignment together, so your practice strokes rehearse the right positions." },
@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
       "A moulded attachment that clips onto any club grip and guides correct hand and finger placement.",
     cogsPence: 126, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005007805470830.html",
-    variants: [{ id: "single", label: "Grip Trainer", price: 1299 }],
+    variants: [{ id: "single", label: "Grip Trainer", price: 999, compareAt: 1299 }], // 23% off, ~7.9×
     benefits: [
       { title: "Correct grip, by feel", body: "The moulded channels place your fingers exactly where they should be — no more guessing from YouTube stills." },
       { title: "Clips onto any club", body: "Snaps on and off in seconds; practise with your own putter, iron or driver." },
@@ -175,7 +175,7 @@ export const PRODUCTS: Product[] = [
       "A durable target-print impact bag. Fill it with towels, set it up, and train the impact position that compresses the ball.",
     cogsPence: 612, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005006727584959.html",
-    variants: [{ id: "single", label: "Impact Bag", price: 2199 }],
+    variants: [{ id: "single", label: "Impact Bag", price: 1899, compareAt: 2199 }], // 14% off — 20% would break the 3× floor (COGS £6.12)
     benefits: [
       { title: "Train impact, not just the swing", body: "Impact is the only moment the ball cares about — the bag gives you a physical position to rehearse." },
       { title: "Instant feedback", body: "Hit it with a cupped wrist or an open face and you'll feel it immediately." },

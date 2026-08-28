@@ -57,13 +57,20 @@ Hero candidates not picked (premium "Pro" tier later):
 The original £44.99 mat price FAILED the 3× rule once real COGS came in.
 Repriced:
 
-| Item | Landed COGS (verified) | Price | Multiple | BE CPA* |
-|---|---|---|---|---|
-| Mat (single) | £20.46 | £69.99 | 3.4× | ~£48 (~£37 after VAT) |
-| Mat + mirror bundle | £25.67 | £84.99 | 3.3× | ~£58 (~£44 after VAT) |
-| Grip trainer | £1.26 (+ship if solo) | £12.99 | ~8× | — upsell |
-| Impact bag | £6.12 | £21.99 | 3.6× | — upsell |
-| Mirror (solo) | £5.21 (+ship if solo) | £22.99 | ~4× | — upsell |
+| Item | Landed COGS (verified) | Price | Was | Multiple | BE CPA* |
+|---|---|---|---|---|---|
+| Mat (single) | £20.46 | £69.99 | — | 3.4× | ~£48 (~£37 after VAT) |
+| Mat + mirror bundle | £25.67 | £79.99 | £87.98 (separates) | 3.1× | ~£53 (~£40 after VAT) |
+| Grip trainer | £1.26 (+ship if solo) | £9.99 | £12.99 (−23%) | ~7.9× | — upsell |
+| Impact bag | £6.12 | £18.99 | £21.99 (−14%) | 3.1× | — upsell |
+| Mirror (solo) | £5.21 (+ship if solo) | £17.99 | £22.99 (−22%) | 3.45× | — upsell |
+
+Markdowns added 2026-08-28 on Max's call (discount the high-margin items
+~20%). Impact bag capped at −14% — a full 20% would break the 3× floor.
+Hero mat left undiscounted: it only just clears the ~£50 cold-click bar.
+Note: the "was" prices are launch list prices, not prices we've sold at —
+UK CMA reference-pricing guidance wants genuine prior selling prices, so
+once real orders flow, keep the compare-ats defensible.
 
 *BE CPA = price − COGS − payment fees (1.5% + £0.20). "After VAT" deducts
 20% VAT on the sale (seller remits on ≤£135 imports).
