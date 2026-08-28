@@ -56,7 +56,7 @@ export const HERO_PRODUCT: Product = {
     "The 3-metre alignment putting mat UK golfers use to groove a repeatable stroke while the course is closed.",
   description:
     "A 3m × 50cm roll-out putting mat with a printed centre alignment line, distance markers and bullseye targets. 10 minutes a day builds the stroke that holds up on Sunday.",
-  cogsPence: 2046, // VERIFIED in account 2026-08-28, Choice, 5-8 days tracked // £20.46 item + shipping est — verify per docs/SUPPLIERS.md
+  cogsPence: 2046, // VERIFIED in account 2026-08-28, Choice, 5-8 days tracked
   supplierUrl: "https://www.aliexpress.com/item/1005007411753812.html",
   variants: [
     {
