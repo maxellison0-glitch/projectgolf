@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/shop"), lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: absoluteUrl("/guides"), lastModified: LAST_UPDATED, changeFrequency: "weekly", priority: 0.7 },
+    { url: absoluteUrl("/guides/winter-golf-practice-at-home"), lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/shipping"), lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.4 },
     { url: absoluteUrl("/returns"), lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.4 },
     { url: absoluteUrl("/contact"), lastModified: LAST_UPDATED, changeFrequency: "monthly", priority: 0.3 },

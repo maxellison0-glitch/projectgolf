@@ -24,6 +24,7 @@ export function Footer() {
           </p>
           <ul className="space-y-1.5">
             <li><Link href="/shop" className="hover:text-ivory">The collection</Link></li>
+            <li><Link href="/guides" className="hover:text-ivory">Practice guides</Link></li>
             <li><Link href="/shipping" className="hover:text-ivory">Shipping &amp; delivery</Link></li>
             <li><Link href="/returns" className="hover:text-ivory">Returns &amp; refunds</Link></li>
             <li><Link href="/contact" className="hover:text-ivory">Contact us</Link></li>

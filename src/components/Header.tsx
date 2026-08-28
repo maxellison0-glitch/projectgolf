@@ -32,6 +32,12 @@ export function Header() {
             Delivery
           </Link>
           <Link
+            href="/guides"
+            className="hidden text-ink/70 transition-colors hover:text-royal md:inline"
+          >
+            Guides
+          </Link>
+          <Link
             href="/contact"
             className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
           >
