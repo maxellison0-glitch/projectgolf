@@ -56,7 +56,7 @@ export const HERO_PRODUCT: Product = {
     "The 3-metre alignment putting mat UK golfers use to groove a repeatable stroke while the course is closed.",
   description:
     "A 3m × 50cm roll-out putting mat with a printed centre alignment line, distance markers and bullseye targets. 10 minutes a day builds the stroke that holds up on Sunday.",
-  cogsPence: 2250, // £20.46 item + shipping est — verify per docs/SUPPLIERS.md
+  cogsPence: 2046, // VERIFIED in account 2026-08-28, Choice, 5-8 days tracked // £20.46 item + shipping est — verify per docs/SUPPLIERS.md
   supplierUrl: "https://www.aliexpress.com/item/1005007411753812.html",
   variants: [
     {
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
       "The tour-standard alignment mirror that checks your eye line, shoulder line and putter face in one glance.",
     description:
       "A compact putting mirror with sight lines for eye position, shoulder alignment and face angle. Pairs with any putting mat.",
-    cogsPence: 600,
+    cogsPence: 521, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005008248111540.html",
     variants: [{ id: "single", label: "Alignment Mirror", price: 2299 }],
     benefits: [
@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
       "The clip-on trainer that moulds your hands into the correct position on every practice swing.",
     description:
       "A moulded attachment that clips onto any club grip and guides correct hand and finger placement.",
-    cogsPence: 350,
+    cogsPence: 126, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005007805470830.html",
     variants: [{ id: "single", label: "Grip Trainer", price: 1299 }],
     benefits: [
@@ -173,7 +173,7 @@ export const PRODUCTS: Product[] = [
     subhook: "The classic impact trainer that teaches forward shaft lean and a square face at the moment that matters.",
     description:
       "A durable target-print impact bag. Fill it with towels, set it up, and train the impact position that compresses the ball.",
-    cogsPence: 700,
+    cogsPence: 612, // VERIFIED 2026-08-28
     supplierUrl: "https://www.aliexpress.com/item/1005006727584959.html",
     variants: [{ id: "single", label: "Impact Bag", price: 2199 }],
     benefits: [

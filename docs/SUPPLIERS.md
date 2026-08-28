@@ -3,13 +3,14 @@
 Decision: **AliExpress only** for the test phase (playbook). Migrate winners to
 CJdropshipping UK-warehouse SKUs at ~10 orders/week. Do not mix suppliers.
 
-All listings confirmed live on 2026-08-28 via UK-region/GBP search sessions.
-GBP prices were served directly with a UK session; USD prices converted at
-$1 = £0.74. **Before first order**: open each link in a UK browser and confirm
-(a) exact UK shipping line + days (expect AliExpress Choice/Standard, tracked,
-~5–12 days — several showed "Sep 02–05" delivery today), (b) seller store
-name/years, (c) whether low USD prices are new-customer-only. AliExpress sale
-prices drift 10–30%.
+**VERIFIED IN MAX'S ACCOUNT 2026-08-28** (wishlist screenshot): all four
+final picks are AliExpress Choice, delivery Sep 02–05 (5–8 days, tracked),
+prices — mat £20.46 · mirror £5.21 · grip trainer £1.26 · impact bag £6.12.
+All are on his wishlist ready to order. Crossed-out "was" prices are
+SuperDeals anchors; treat the paid prices above as steady-state but re-check
+if a promo lapses. Note: Choice free shipping usually needs a ~£10 order
+minimum — single small-item orders (grip/mirror/bag alone) may add a small
+shipping fee; the mat clears it on its own.
 
 ## Final picks — order from these when sales start
 
@@ -56,12 +57,13 @@ Hero candidates not picked (premium "Pro" tier later):
 The original £44.99 mat price FAILED the 3× rule once real COGS came in.
 Repriced:
 
-| Item | Landed COGS | Price | Multiple | BE CPA* |
+| Item | Landed COGS (verified) | Price | Multiple | BE CPA* |
 |---|---|---|---|---|
-| Mat (single) | ~£22.50 mid | £69.99 | 3.1× | ~£46 (~£34 after VAT) |
-| Mat + mirror bundle | ~£28.50 mid | £84.99 | 3.0× | ~£55 (~£41 after VAT) |
-| Grip trainer | ~£3.50 | £12.99 | 3.7× | — upsell |
-| Impact bag | ~£7 | £21.99 | 3.1× | — upsell |
+| Mat (single) | £20.46 | £69.99 | 3.4× | ~£48 (~£37 after VAT) |
+| Mat + mirror bundle | £25.67 | £84.99 | 3.3× | ~£58 (~£44 after VAT) |
+| Grip trainer | £1.26 (+ship if solo) | £12.99 | ~8× | — upsell |
+| Impact bag | £6.12 | £21.99 | 3.6× | — upsell |
+| Mirror (solo) | £5.21 (+ship if solo) | £22.99 | ~4× | — upsell |
 
 *BE CPA = price − COGS − payment fees (1.5% + £0.20). "After VAT" deducts
 20% VAT on the sale (seller remits on ≤£135 imports).
