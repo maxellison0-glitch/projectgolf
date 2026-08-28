@@ -55,16 +55,19 @@ export function AnalyticsScripts() {
     const syncConsent = () => {
       const accepted = window.localStorage.getItem(CONSENT_STORAGE_KEY) === "accepted";
       setHasConsent(accepted);
-      if (accepted) {
-        initialiseGa4();
-        initialiseMetaPixel();
-      }
     };
 
     syncConsent();
     window.addEventListener(CONSENT_CHANGE_EVENT, syncConsent);
     return () => window.removeEventListener(CONSENT_CHANGE_EVENT, syncConsent);
   }, []);
+
+  useEffect(() => {
+    if (!hasConsent) return;
+
+    initialiseGa4();
+    initialiseMetaPixel();
+  }, [hasConsent]);
 
   if (!hasConsent) return null;
 
