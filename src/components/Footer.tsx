@@ -16,6 +16,7 @@ export function Footer() {
         <div>
           <p className="text-cream font-semibold mb-2">Help</p>
           <ul className="space-y-1">
+            <li><Link href="/shop" className="hover:text-cream">Shop all</Link></li>
             <li><Link href="/shipping" className="hover:text-cream">Shipping &amp; delivery</Link></li>
             <li><Link href="/returns" className="hover:text-cream">Returns &amp; refunds</Link></li>
             <li><Link href="/contact" className="hover:text-cream">Contact us</Link></li>

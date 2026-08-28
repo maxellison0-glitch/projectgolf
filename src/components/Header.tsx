@@ -10,6 +10,9 @@ export function Header() {
           <span className="text-brass">.</span>
         </Link>
         <nav className="flex items-center gap-5 text-sm text-green/80">
+          <Link href="/shop" className="hover:text-green font-semibold">
+            Shop all
+          </Link>
           <Link href="/shipping" className="hover:text-green">
             Delivery
           </Link>

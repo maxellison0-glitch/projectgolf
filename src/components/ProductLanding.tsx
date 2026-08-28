@@ -1,8 +1,11 @@
+import Link from "next/link";
 import type { Product } from "@/data/products";
+import { PRODUCTS } from "@/data/products";
 import { BuyBox } from "@/components/BuyBox";
 import { StickyATC } from "@/components/StickyATC";
 import { FAQ } from "@/components/FAQ";
 import { TrustBar } from "@/components/TrustBar";
+import { gbp } from "@/lib/format";
 
 /* The money page. Structure per the playbook: hook headline → gallery →
  * buy box → benefits → how-it-works → social proof → FAQ → guarantee. */
@@ -80,6 +83,9 @@ export function ProductLanding({ product }: { product: Product }) {
         </section>
       )}
 
+      {/* Cross-sell — the other products are otherwise unreachable */}
+      <OtherProducts current={product.slug} />
+
       {/* FAQ */}
       <section className="py-14 max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-green text-center mb-8">
@@ -103,6 +109,42 @@ export function ProductLanding({ product }: { product: Product }) {
 
       <StickyATC product={product} />
     </div>
+  );
+}
+
+function OtherProducts({ current }: { current: string }) {
+  const others = PRODUCTS.filter((p) => p.slug !== current);
+  if (others.length === 0) return null;
+  return (
+    <section className="py-14">
+      <h2 className="text-3xl font-bold text-green text-center mb-10">
+        Complete your practice setup
+      </h2>
+      <div className="grid sm:grid-cols-3 gap-6">
+        {others.map((p) => (
+          <Link
+            key={p.slug}
+            href={`/product/${p.slug}`}
+            className="group block bg-white rounded-2xl border border-green/10 overflow-hidden hover:border-green/30 transition-colors"
+          >
+            <div className="aspect-square bg-cream overflow-hidden">
+              {p.images[0] && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={p.images[0]}
+                  alt={p.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              )}
+            </div>
+            <div className="p-4">
+              <h3 className="font-bold text-green">{p.name}</h3>
+              <p className="font-bold mt-1">{gbp(p.variants[0].price)}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
