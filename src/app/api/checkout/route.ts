@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
   const origin = req.nextUrl.origin;
 
   const session = await stripe.checkout.sessions.create({
+    integration_identifier: "thegolfden_checkout_8fK2mQxL",
     mode: "payment",
     line_items: [
       {
