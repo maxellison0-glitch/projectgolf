@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f1e8;
+  --foreground: #131c33;
+}
+
+@theme inline {
+  /* Palette: ivory ground, navy ink, royal blue brand, antique gold detail. */
+  --color-ivory: #f4f1e8;
+  --color-paper: #fbf9f2;
+  --color-ink: #131c33;
+  --color-royal: #013292; /* sampled from the crest mark */
+  --color-royal-deep: #02226a;
+  --color-gold: #a6874e;
+  --color-hairline: #e0daca;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Type roles: display = inscriptional caps, voice = serif italic, sans = UI/body. */
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-marcellus), "Times New Roman", serif;
+  --font-voice: var(--font-garamond), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Inscriptional display type wants air, not tightness. */
+.font-display {
+  letter-spacing: 0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid #013292;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #013292;
+  color: #f4f1e8;
+}
+
+/* Certificate rule — the one gold detail, used as a small centred ornament. */
+.rule-double {
+  height: 5px;
+  border-top: 1px solid #a6874e;
+  border-bottom: 1px solid #a6874e;
+  opacity: 0.6;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.rise-1 {
+  animation-delay: 0.08s;
+}
+.rise-2 {
+  animation-delay: 0.16s;
+}
+.rise-3 {
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
