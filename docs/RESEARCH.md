@@ -82,14 +82,15 @@ collections; and bundles/brand are the Amazon-proofing. Launch sequence:
 
 No ad spend until Max says go (his call, 2026-08-28).
 
-## Brand name proposals (Max to pick; site needs one edit in `src/config/brand.ts`)
+## Brand name proposals (Max wants "golf" in the name — 2026-08-28)
 
-- **ParLab** (current working name) — improvement/lab angle, short, brandable
-- **PuttHaus** — hero-adjacent, premium feel; limits later category width
-- **GreenRoom Golf** — practice-at-home double meaning, room to grow
-- **Scratch Season** — aspirational (play off scratch), seasonal nod
-- **BackGarden Golf** — very UK, very literal, great for TikTok
-- **The Short Game Co.** — putting + chipping = exactly the catalogue
+Working name set to **The Golf Den** (`src/config/brand.ts`). Alternatives:
+
+- **HomeGolf Co.** — literal, category-wide
+- **BackGarden Golf** — very UK, great for TikTok
+- **GreenRoom Golf** — practice-at-home double meaning
+- **The Golf Room** — same vibe as Den, softer
+- **WinterGolf Club** — seasonal angle baked in; limits summer selling
 
 Check domain + Companies House + trademark before committing.
 

@@ -1,11 +1,11 @@
 // Single source of truth for brand identity. Working name only — swap once
 // Max picks the real name/domain (see docs/RESEARCH.md for proposals).
 export const BRAND = {
-  name: "ParLab",
-  legalName: "ParLab (working name)",
-  domain: "parlab.co.uk",
+  name: "The Golf Den",
+  legalName: "The Golf Den (working name)",
+  domain: "thegolfden.co.uk",
   tagline: "Lower your handicap from your living room",
-  email: "support@parlab.co.uk",
+  email: "support@thegolfden.co.uk",
   // UK distance selling requires a business identity + contact address on site.
   // TODO(Max): real trading address before launch.
   address: "Trading address TBC, United Kingdom",

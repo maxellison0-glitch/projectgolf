@@ -115,12 +115,19 @@ function Gallery({ product }: { product: Product }) {
       </div>
     );
   }
+  const [main, ...rest] = product.images;
   return (
     <div className="space-y-3">
-      {product.images.map((src) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img key={src} src={src} alt={product.name} className="rounded-3xl w-full" />
-      ))}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={main} alt={product.name} className="rounded-3xl w-full" />
+      {rest.length > 0 && (
+        <div className="grid grid-cols-2 gap-3">
+          {rest.map((src) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={src} src={src} alt={product.name} className="rounded-2xl w-full" />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
