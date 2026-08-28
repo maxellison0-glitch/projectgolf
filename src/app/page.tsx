@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { ProductGrid } from "@/components/ProductGrid";
 import { TrustBar } from "@/components/TrustBar";
@@ -18,14 +17,14 @@ export default function Home() {
     <div>
       {/* Hero — the title page of the house */}
       <section className="mx-auto max-w-4xl px-4 pb-16 pt-16 text-center sm:pb-20 sm:pt-24">
-        <Image
-          src="/brand/house-of-par-mark.png"
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimizer needed */}
+        <img
+          src="/brand/stag-mark.svg"
           alt=""
           aria-hidden="true"
-          width={88}
-          height={88}
-          className="rise mx-auto h-20 w-20 object-contain sm:h-22 sm:w-22"
-          priority
+          width={128}
+          height={128}
+          className="rise mx-auto h-32 w-32 object-contain sm:h-40 sm:w-40"
         />
         <p className="rise rise-1 mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/60">
           Home practice standards · Est. MMXXVI

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import Stripe from "stripe";
 import { BRAND } from "@/config/brand";
@@ -44,8 +43,9 @@ export default async function SuccessPage({
   return (
     <div className="mx-auto max-w-xl space-y-5 px-4 py-24 text-center">
       <PurchaseEvent data={purchaseData} />
-      <Image
-        src="/brand/house-of-par-mark.png"
+      {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimizer needed */}
+      <img
+        src="/brand/seal-mark.svg"
         alt=""
         aria-hidden="true"
         width={72}

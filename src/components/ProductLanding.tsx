@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Product } from "@/data/products";
 import { standardNo } from "@/data/products";
 import { BuyBox } from "@/components/BuyBox";
@@ -115,13 +114,14 @@ export function ProductLanding({ product }: { product: Product }) {
 
       {/* Guarantee + final CTA */}
       <section className="mx-auto max-w-2xl py-16 text-center">
-        <Image
-          src="/brand/house-of-par-mark.png"
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimizer needed */}
+        <img
+          src="/brand/seal-mark.svg"
           alt=""
           aria-hidden="true"
-          width={64}
-          height={64}
-          className="mx-auto h-16 w-16 object-contain"
+          width={80}
+          height={80}
+          className="mx-auto h-20 w-20 object-contain"
         />
         <h2 className="mt-6 font-display text-3xl text-ink sm:text-4xl">
           The thirty-day standard

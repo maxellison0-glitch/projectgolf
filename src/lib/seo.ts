@@ -1,7 +1,7 @@
 import { BRAND } from "@/config/brand";
 
 export const SITE_URL = `https://www.${BRAND.domain}`;
-export const BRAND_LOGO_URL = `${SITE_URL}/brand/house-of-par-mark.png`;
+export const BRAND_LOGO_URL = `${SITE_URL}/brand/house-of-par-seal.png`;
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();

@@ -1,18 +1,18 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-ivory/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2.5">
-          <Image
-            src="/brand/house-of-par-mark.png"
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimizer needed */}
+          <img
+            src="/brand/seal-mark.svg"
             alt=""
             aria-hidden="true"
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain"
+            width={38}
+            height={38}
+            className="h-[38px] w-[38px] object-contain"
           />
           <span className="font-display text-lg tracking-[0.1em] text-royal">
             HOUSE <span className="font-voice text-base italic">of</span> PAR

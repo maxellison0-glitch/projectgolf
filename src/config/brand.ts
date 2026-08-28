@@ -17,10 +17,11 @@ export const BRAND = {
 } as const;
 
 export const COLORS = {
-  // Heritage golf palette: ivory ground, navy ink, royal blue, antique gold.
-  ivory: "#f4f1e8",
-  ink: "#131c33",
-  royal: "#013292", // sampled from public/brand/house-of-par-mark.png
-  royalDeep: "#02226a",
-  gold: "#a6874e",
+  // Heritage golf palette: cream ground, green-black ink, racing green, saddle tan.
+  // Source of truth for rendered colors is src/app/globals.css @theme tokens.
+  ivory: "#f4efe3",
+  ink: "#17211b",
+  royal: "#0b3b2a", // British racing green (utility name kept from the blue era)
+  royalDeep: "#072a1d",
+  gold: "#b08a57",
 } as const;
