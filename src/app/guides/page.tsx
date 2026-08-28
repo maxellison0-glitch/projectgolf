@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { sortedGuides } from "@/data/guides";
 
 export const metadata: Metadata = {
   title: "Home Golf Practice Guides",
@@ -15,17 +16,17 @@ export default function GuidesPage() {
       <p className="mt-4 max-w-2xl font-voice text-xl italic text-ink/75">
         Useful sessions for the golfer who wants to arrive in spring with a better game than they had in autumn.
       </p>
-      <div className="mt-12 border-t border-hairline pt-8">
-        <Link href="/guides/winter-golf-practice-at-home" className="group block">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-royal">Winter practice</p>
-          <h2 className="mt-2 font-display text-3xl text-ink transition-colors group-hover:text-royal">
-            How to practise golf at home this winter
-          </h2>
-          <p className="mt-3 max-w-2xl text-ink/70">
-            A focused four-part routine for putting, grip and impact that needs little space and no launch monitor.
-          </p>
-          <span className="mt-5 inline-block font-semibold text-royal">Read the guide &rarr;</span>
-        </Link>
+      <div className="mt-12 divide-y divide-hairline border-t border-hairline">
+        {sortedGuides().map((guide) => (
+          <Link key={guide.slug} href={`/guides/${guide.slug}`} className="group block py-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-royal">{guide.category}</p>
+            <h2 className="mt-2 font-display text-3xl text-ink transition-colors group-hover:text-royal">
+              {guide.title}
+            </h2>
+            <p className="mt-3 max-w-2xl text-ink/70">{guide.description}</p>
+            <span className="mt-5 inline-block font-semibold text-royal">Read the guide &rarr;</span>
+          </Link>
+        ))}
       </div>
     </div>
   );
