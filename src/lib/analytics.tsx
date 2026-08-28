@@ -55,7 +55,10 @@ export function AnalyticsScripts() {
     const syncConsent = () => {
       const accepted = window.localStorage.getItem(CONSENT_STORAGE_KEY) === "accepted";
       setHasConsent(accepted);
-      if (accepted) initialiseMetaPixel();
+      if (accepted) {
+        initialiseGa4();
+        initialiseMetaPixel();
+      }
     };
 
     syncConsent();
@@ -72,7 +75,6 @@ export function AnalyticsScripts() {
           id="ga4-loader"
           src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
           strategy="afterInteractive"
-          onReady={initialiseGa4}
         />
       )}
     </>
