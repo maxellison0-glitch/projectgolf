@@ -24,7 +24,7 @@ export default function Home() {
           aria-hidden="true"
           width={128}
           height={128}
-          className="rise mx-auto h-32 w-32 object-contain sm:h-40 sm:w-40"
+          className="rise mx-auto h-36 w-36 object-contain sm:h-44 sm:w-44"
         />
         <p className="rise rise-1 mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/60">
           Home practice standards · Est. MMXXVI

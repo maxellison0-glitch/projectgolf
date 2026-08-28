@@ -10,9 +10,9 @@ export function Header() {
             src="/brand/seal-mark.svg"
             alt=""
             aria-hidden="true"
-            width={38}
-            height={38}
-            className="h-[38px] w-[38px] object-contain"
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
           />
           <span className="font-display text-lg tracking-[0.1em] text-royal">
             HOUSE <span className="font-voice text-base italic">of</span> PAR
