@@ -9,6 +9,7 @@ const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID;
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -34,7 +35,7 @@ fbq('track', 'PageView');`}
           />
           <Script id="ga4" strategy="afterInteractive">
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','${GA4_ID}');`}
+gtag('js',new Date());gtag('config','${GA4_ID}',{send_page_view:false});`}
           </Script>
         </>
       )}
@@ -42,8 +43,16 @@ gtag('js',new Date());gtag('config','${GA4_ID}');`}
   );
 }
 
-export function track(event: string, params?: Record<string, unknown>) {
-  if (typeof window !== "undefined" && window.fbq) {
+export function trackMeta(event: string, params?: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  if (window.fbq) {
     window.fbq("track", event, params);
+  }
+}
+
+export function trackGa4(event: string, params?: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  if (window.gtag) {
+    window.gtag("event", event, params);
   }
 }

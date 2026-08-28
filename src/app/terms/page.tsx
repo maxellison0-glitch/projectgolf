@@ -1,6 +1,11 @@
 import { BRAND } from "@/config/brand";
+import type { Metadata } from "next";
 
-export const metadata = { title: `Terms of Service — ${BRAND.name}` };
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: `Terms governing orders, payment, delivery and returns from ${BRAND.name}.`,
+  alternates: { canonical: "/terms" },
+};
 
 /* Skeleton terms — review before launch. */
 export default function TermsPage() {

@@ -1,6 +1,11 @@
 import { BRAND } from "@/config/brand";
+import type { Metadata } from "next";
 
-export const metadata = { title: `Privacy Policy — ${BRAND.name}` };
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: `How ${BRAND.name} collects, uses and protects customer and website data.`,
+  alternates: { canonical: "/privacy" },
+};
 
 /* Skeleton UK GDPR privacy policy — review before launch. */
 export default function PrivacyPage() {

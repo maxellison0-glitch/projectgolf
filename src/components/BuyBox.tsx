@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { gbp } from "@/lib/format";
-import { track } from "@/lib/analytics";
+import { trackGa4, trackMeta } from "@/lib/analytics";
 import type { Product } from "@/data/products";
 
 /* Client component: only ever receives these fields. Never pass the full
  * Product here — internal fields (cogsPence, supplierUrl) would serialize
  * into the page payload for anyone to read. */
-export type BuyableProduct = Pick<Product, "slug" | "name" | "variants">;
+export type BuyableProduct = Pick<Product, "slug" | "name" | "category" | "variants">;
 
 export function BuyBox({ product }: { product: BuyableProduct }) {
   const [variantId, setVariantId] = useState(product.variants[0].id);
@@ -19,10 +19,24 @@ export function BuyBox({ product }: { product: BuyableProduct }) {
   async function checkout() {
     setLoading(true);
     setError(null);
-    track("InitiateCheckout", {
+    trackMeta("InitiateCheckout", {
       content_name: product.name,
       value: variant.price / 100,
       currency: "GBP",
+    });
+    trackGa4("begin_checkout", {
+      currency: "GBP",
+      value: variant.price / 100,
+      items: [
+        {
+          item_id: `${product.slug}-${variant.id}`,
+          item_name: product.name,
+          item_variant: variant.label,
+          item_category: product.category,
+          price: variant.price / 100,
+          quantity: 1,
+        },
+      ],
     });
     try {
       const res = await fetch("/api/checkout", {
@@ -32,7 +46,7 @@ export function BuyBox({ product }: { product: BuyableProduct }) {
       });
       const data = await res.json();
       if (res.ok && data.url) {
-        window.location.href = data.url;
+        window.location.assign(data.url);
       } else {
         setError(data.error ?? "Checkout isn't available right now. Please try again shortly.");
       }

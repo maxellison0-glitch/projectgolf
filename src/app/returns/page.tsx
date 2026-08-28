@@ -1,6 +1,11 @@
 import { BRAND } from "@/config/brand";
+import type { Metadata } from "next";
 
-export const metadata = { title: `Returns & Refunds — ${BRAND.name}` };
+export const metadata: Metadata = {
+  title: "Returns & Refunds",
+  description: "House of Par offers a 30-day money-back guarantee on golf training aids, alongside your UK statutory cancellation rights.",
+  alternates: { canonical: "/returns" },
+};
 
 export default function ReturnsPage() {
   return (

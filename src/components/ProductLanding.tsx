@@ -16,6 +16,7 @@ export function ProductLanding({ product }: { product: Product }) {
   const buyable = {
     slug: product.slug,
     name: product.name,
+    category: product.category,
     variants: product.variants,
   };
 
@@ -29,9 +30,10 @@ export function ProductLanding({ product }: { product: Product }) {
             {standardNo(product)} · {product.category}
           </p>
           <h1 className="mt-3 font-display text-4xl leading-[1.12] text-ink sm:text-5xl">
-            {product.hook}
+            {product.name}
           </h1>
-          <p className="mt-4 font-voice text-lg italic text-ink/75">{product.subhook}</p>
+          <p className="mt-4 font-voice text-2xl italic text-ink">{product.hook}</p>
+          <p className="mt-3 text-lg text-ink/75">{product.subhook}</p>
           <div className="mt-7">
             <BuyBox product={buyable} />
           </div>

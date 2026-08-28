@@ -1,7 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ProductGrid } from "@/components/ProductGrid";
 import { TrustBar } from "@/components/TrustBar";
+
+export const metadata: Metadata = {
+  title: { absolute: "House of Par | Golf Training Aids for Home Practice UK" },
+  description:
+    "Premium putting mats, alignment mirrors and golf swing training aids for home practice. Free UK tracked delivery and 30-day returns.",
+  alternates: { canonical: "/" },
+};
 
 /* Multi-product storefront: every product presented as an equal —
  * the ad data decides the winners, not the site structure. */

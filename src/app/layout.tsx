@@ -4,6 +4,7 @@ import "./globals.css";
 import { BRAND } from "@/config/brand";
 import { SITE_URL, organisationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { AnalyticsScripts } from "@/lib/analytics";
+import { AnalyticsPageView } from "@/components/AnalyticsPageView";
 import { JsonLd } from "@/components/JsonLd";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Header } from "@/components/Header";
@@ -39,7 +40,6 @@ export const metadata: Metadata = {
     "Premium golf training aids for home practice, including putting mats, alignment mirrors and swing trainers. Free UK tracked delivery.",
   applicationName: BRAND.name,
   category: "Golf equipment",
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -80,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <JsonLd data={[organisationJsonLd(), websiteJsonLd()]} />
         <AnalyticsScripts />
+        <AnalyticsPageView />
         <AnnouncementBar />
         <Header />
         <main className="flex-1">{children}</main>

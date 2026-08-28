@@ -1,6 +1,11 @@
 import { BRAND } from "@/config/brand";
+import type { Metadata } from "next";
 
-export const metadata = { title: `Shipping & Delivery — ${BRAND.name}` };
+export const metadata: Metadata = {
+  title: "UK Shipping & Delivery",
+  description: "Free tracked UK delivery on every House of Par order, with dispatch in 24–48 hours and an honest 2–3 week delivery estimate.",
+  alternates: { canonical: "/shipping" },
+};
 
 export default function ShippingPage() {
   return (

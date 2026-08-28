@@ -1,6 +1,11 @@
 import { BRAND } from "@/config/brand";
+import type { Metadata } from "next";
 
-export const metadata = { title: `Contact — ${BRAND.name}` };
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Contact ${BRAND.name} customer service about orders, delivery, returns or our golf training aids.`,
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
