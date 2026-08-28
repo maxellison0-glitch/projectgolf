@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const marcellus = Marcellus({
   weight: "400",
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -30,6 +30,13 @@ export default function PrivacyPage() {
         time. We share data only with the services needed to deliver your order
         (payment processor, fulfilment partner, courier).
       </p>
+      <h2 id="cookies" className="scroll-mt-24 pt-2 font-display text-xl text-ink">Cookies and analytics</h2>
+      <p className="text-ink/80">
+        Optional Google Analytics and Meta analytics and marketing cookies load
+        only after you select &quot;Accept optional cookies&quot; in our cookie
+        controls. You can reopen Cookie settings at any time and switch back to
+        necessary cookies only.
+      </p>
       <h2 className="pt-2 font-display text-xl text-ink">Your rights</h2>
       <p className="text-ink/80">
         Under UK GDPR you can request access to, correction of, or deletion of

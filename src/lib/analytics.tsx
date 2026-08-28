@@ -1,7 +1,12 @@
-/* Meta Pixel + GA4, env-gated: nothing loads until the IDs are set, so the
- * site is safe to deploy before tracking is wired. CAPI comes later via a
- * server event on the checkout route. */
+"use client";
+
+/* Meta Pixel + GA4, env- and consent-gated: nothing loads until the IDs are
+ * set and the visitor accepts analytics cookies. */
+import { useEffect, useState } from "react";
 import Script from "next/script";
+
+export const CONSENT_STORAGE_KEY = "house-of-par-cookie-consent";
+export const CONSENT_CHANGE_EVENT = "house-of-par-consent-change";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID;
@@ -14,6 +19,20 @@ declare global {
 }
 
 export function AnalyticsScripts() {
+  const [hasConsent, setHasConsent] = useState(false);
+
+  useEffect(() => {
+    const syncConsent = () => {
+      setHasConsent(window.localStorage.getItem(CONSENT_STORAGE_KEY) === "accepted");
+    };
+
+    syncConsent();
+    window.addEventListener(CONSENT_CHANGE_EVENT, syncConsent);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, syncConsent);
+  }, []);
+
+  if (!hasConsent) return null;
+
   return (
     <>
       {PIXEL_ID && (
@@ -35,7 +54,7 @@ fbq('track', 'PageView');`}
           />
           <Script id="ga4" strategy="afterInteractive">
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','${GA4_ID}',{send_page_view:false});`}
+gtag('js',new Date());gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});gtag('config','${GA4_ID}');`}
           </Script>
         </>
       )}
