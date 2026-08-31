@@ -12,6 +12,14 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "15-minute-daily-golf-practice-routine",
+    title: "A 15-minute daily golf practice routine for busy golfers",
+    category: "Practice routines",
+    description:
+      "Five fixed blocks — grip, start line, distance control, impact and two numbers written down — that fit into an ordinary weekday evening.",
+    published: "2026-08-31",
+  },
+  {
     slug: "why-you-keep-missing-short-putts",
     title: "Why you keep missing short putts",
     category: "Putting",

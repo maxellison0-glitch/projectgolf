@@ -10,7 +10,6 @@ impact bag). British English throughout ("practise" as the verb).
 
 ## Queued
 
-2. A 15-minute daily golf practice routine for busy golfers — category: Practice routines — keywords: daily golf practice routine, golf practice at home
 3. How to stop three-putting: distance control drills you can do on a mat — category: Putting — keywords: how to stop three putting, lag putting drills
 4. Golf grip mistakes that cost high handicappers strokes — category: Grip — keywords: golf grip mistakes, correct golf grip for beginners
 5. Putting alignment mirror drills the pros actually use — category: Putting — keywords: putting mirror drills, putting alignment drills
@@ -36,5 +35,6 @@ impact bag). British English throughout ("practise" as the verb).
 
 ## Published
 
+- 2026-08-31 — A 15-minute daily golf practice routine for busy golfers — /guides/15-minute-daily-golf-practice-routine
 - 2026-08-28 — Why you keep missing short putts — /guides/why-you-keep-missing-short-putts
 - 2026-08-28 — How to practise golf at home this winter — /guides/winter-golf-practice-at-home
