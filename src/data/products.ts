@@ -340,7 +340,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "structured-cap",
     name: "Structured Cap",
-    category: "Headwear",
+    category: "Accessories",
     hook: "Gold thread, every angle",
     subhook: "Six-panel structured cap with a pre-curved peak and gold HOP monogram front and centre.",
     description: "Six-panel structured crown cap with pre-curved peak. Gold thread HOP embroidery front and centre, metal clasp adjuster at the back.",

@@ -54,7 +54,7 @@ export default function ClothingPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative -mt-[73px] h-[55svh] min-h-[320px] sm:h-[48vh]">
+      <div className="relative -mt-[93px] h-[55svh] min-h-[320px] sm:h-[48vh] lg:-mt-[178px] lg:h-[60vh] lg:min-h-[400px]">
         <Image
           src="/products/hero/hero-polo-detail-mobile.png"
           alt="House of Par clothing"
