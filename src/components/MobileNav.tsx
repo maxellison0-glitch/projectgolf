@@ -71,7 +71,7 @@ function MenuOverlay({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function MobileNav() {
+export function MobileNav({ transparent = false }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
@@ -91,7 +91,9 @@ export function MobileNav() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
+        className={`relative z-50 flex h-10 w-10 items-center justify-center lg:hidden transition-colors duration-300 ${
+          transparent ? "text-ivory" : "text-ink"
+        }`}
         aria-label="Open menu"
       >
         <svg width="22" height="14" viewBox="0 0 22 14" fill="none" className="text-current">

@@ -54,13 +54,13 @@ export default function ClothingPage() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative -mt-[93px] h-[55svh] min-h-[320px] sm:h-[48vh] lg:-mt-[178px] lg:h-[60vh] lg:min-h-[400px]">
+      <div className="relative -mt-[72px] h-[55svh] min-h-[320px] sm:h-[48vh] lg:-mt-[90px] lg:h-[60vh] lg:min-h-[400px]">
         <Image
           src="/products/hero/hero-polo-detail-mobile.png"
           alt="House of Par clothing"
           fill
           sizes="100vw"
-          quality={85}
+          quality={90}
           className="object-cover object-[50%_25%] lg:hidden"
           priority
         />
@@ -69,17 +69,18 @@ export default function ClothingPage() {
           alt="House of Par clothing"
           fill
           sizes="100vw"
-          quality={85}
+          quality={90}
           className="hidden object-cover object-[50%_25%] lg:block"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 px-5 pb-8 sm:px-8 sm:pb-10">
           <div className="mx-auto max-w-6xl">
-            <h1 className="font-display text-3xl text-ivory sm:text-4xl lg:text-5xl">
+            <div className="mb-3 h-px w-10 bg-gold/50" />
+            <h1 className="font-display text-3xl text-ivory drop-shadow-md sm:text-4xl lg:text-5xl">
               The Collection
             </h1>
-            <p className="mt-2 max-w-md text-sm text-ivory/70 sm:text-base">
+            <p className="mt-2 max-w-md text-sm text-ivory/70 drop-shadow-sm sm:text-base">
               Golf-ready apparel with the HOP crest — embroidered, never printed.
               Free UK tracked delivery on every order.
             </p>
