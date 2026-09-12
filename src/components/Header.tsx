@@ -1,11 +1,20 @@
 import Link from "next/link";
+import { MobileNav } from "./MobileNav";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-ivory/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-2.5">
-          {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimizer needed */}
+        {/* Left: hamburger on mobile */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <MobileNav />
+        </div>
+
+        {/* Logo — centred on mobile, left on desktop */}
+        <Link
+          href="/"
+          className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center gap-2.5"
+        >
           <img
             src="/brand/seal-mark.svg"
             alt=""
@@ -18,44 +27,54 @@ export function Header() {
             HOUSE <span className="font-voice text-base italic">of</span> PAR
           </span>
         </Link>
-        <nav className="flex items-center gap-6 text-sm">
-          <Link
-            href="/shop"
-            className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
-          >
-            Collection
-          </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-6 text-sm lg:flex">
           <Link
             href="/clothing"
-            className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
+            className="text-ink/70 transition-colors hover:text-royal"
           >
-            Clothing
+            Shop All
           </Link>
           <Link
-            href="/shipping"
-            className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
+            href="/clothing#tops"
+            className="text-ink/70 transition-colors hover:text-royal"
           >
-            Delivery
+            Tops
+          </Link>
+          <Link
+            href="/clothing#outerwear"
+            className="text-ink/70 transition-colors hover:text-royal"
+          >
+            Outerwear
+          </Link>
+          <Link
+            href="/shop"
+            className="text-ink/70 transition-colors hover:text-royal"
+          >
+            Equipment
           </Link>
           <Link
             href="/guides"
-            className="hidden text-ink/70 transition-colors hover:text-royal md:inline"
+            className="text-ink/70 transition-colors hover:text-royal"
           >
             Guides
           </Link>
           <Link
             href="/contact"
-            className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
+            className="text-ink/70 transition-colors hover:text-royal"
           >
             Contact
           </Link>
-          <Link
-            href="/shop"
-            className="rounded-full bg-royal px-5 py-2 font-semibold text-ivory transition-colors hover:bg-royal-deep"
-          >
-            Shop
-          </Link>
         </nav>
+
+        {/* Right: Shop CTA */}
+        <Link
+          href="/clothing"
+          className="rounded-full bg-royal px-5 py-2 text-sm font-semibold text-ivory transition-colors hover:bg-royal-deep"
+        >
+          Shop
+        </Link>
       </div>
     </header>
   );
