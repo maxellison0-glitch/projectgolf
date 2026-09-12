@@ -26,6 +26,12 @@ export function Header() {
             Collection
           </Link>
           <Link
+            href="/clothing"
+            className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
+          >
+            Clothing
+          </Link>
+          <Link
             href="/shipping"
             className="hidden text-ink/70 transition-colors hover:text-royal sm:inline"
           >

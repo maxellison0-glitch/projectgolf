@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { ProductGrid } from "@/components/ProductGrid";
 import { TrustBar } from "@/components/TrustBar";
@@ -22,9 +23,9 @@ export default function Home() {
           src="/brand/stag-mark.svg"
           alt=""
           aria-hidden="true"
-          width={128}
-          height={128}
-          className="rise mx-auto h-36 w-36 object-contain sm:h-44 sm:w-44"
+          width={160}
+          height={160}
+          className="rise mx-auto h-32 w-32 object-contain sm:h-40 sm:w-40"
         />
         <p className="rise rise-1 mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/60">
           Home practice standards · Est. MMXXVI
@@ -61,6 +62,62 @@ export default function Home() {
           </h2>
         </div>
         <ProductGrid />
+      </section>
+
+      {/* Clothing — coming soon */}
+      <section className="bg-paper">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div className="mb-12 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+              New for 2026
+            </p>
+            <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
+              House of Par Clothing
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl font-voice text-lg italic text-ink/70">
+              The same standard, worn. Golf-ready apparel designed for the
+              course and comfortable enough for everything after it.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Quarter Zip", desc: "Navy windshell with gold HOP embroidery — the signature piece", img: "/products/hop-quarter-zip-navy.jpg" },
+              { name: "Performance Polo", desc: "Moisture-wicking stretch polo in house navy and ivory", img: "/products/clothing/polo-hero.png" },
+              { name: "Structured Cap", desc: "Six-panel structured cap with gold HOP monogram", img: "/products/clothing/cap-hero.png" },
+              { name: "Tour Hoodie", desc: "Heavyweight cotton hoodie with embroidered back crest", img: "/products/clothing/hoodie-hero.png" },
+            ].map((item) => (
+              <Link key={item.name} href="/clothing" className="group block">
+                <div className="overflow-hidden rounded-lg border border-hairline bg-ivory">
+                  <div className="relative aspect-[3/4] w-full">
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+                    Coming soon
+                  </p>
+                  <h3 className="mt-1.5 font-display text-xl text-ink transition-colors group-hover:text-royal">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-ink/70">{item.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/clothing"
+              className="inline-block rounded-full border border-gold/40 px-8 py-3.5 font-semibold text-gold transition-colors hover:bg-gold hover:text-ivory"
+            >
+              View the clothing collection
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Brand moment */}
