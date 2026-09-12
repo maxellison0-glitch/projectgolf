@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div>
       {/* ── Hero: full-bleed lifestyle image, J.Lindeberg / Manors style ── */}
-      <section className="relative -mt-[72px] h-[100svh] min-h-[600px] overflow-hidden lg:-mt-[90px]">
+      <section className="relative -mt-[90px] h-[100svh] min-h-[600px] overflow-hidden lg:-mt-[148px]">
         <Image
           src="/products/hero/hero-walking-mobile.png"
           alt="Golfer wearing House of Par apparel walking on a British links course at golden hour"
