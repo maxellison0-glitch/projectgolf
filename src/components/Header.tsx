@@ -4,7 +4,7 @@ import { CartBadge } from "./CartBadge";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-ivory/90 backdrop-blur">
+    <header className="border-b border-hairline bg-ivory/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Left: hamburger on mobile */}
         <div className="flex items-center gap-3 lg:hidden">
@@ -24,7 +24,7 @@ export function Header() {
             height={44}
             className="h-11 w-11 object-contain"
           />
-          <span className="font-display text-lg tracking-[0.1em] text-royal">
+          <span className="hidden font-display text-lg tracking-[0.1em] text-royal sm:inline">
             HOUSE <span className="font-voice text-base italic">of</span> PAR
           </span>
         </Link>

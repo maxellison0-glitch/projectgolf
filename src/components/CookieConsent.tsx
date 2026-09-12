@@ -39,7 +39,7 @@ export function CookieConsent() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-3 left-3 z-50 rounded-full border border-hairline bg-paper px-3 py-2 text-xs font-semibold text-ink shadow-lg hover:border-royal"
+        className="fixed bottom-3 right-3 z-50 rounded-full border border-hairline bg-paper/90 px-2.5 py-1.5 text-[10px] font-medium text-ink/40 shadow-sm backdrop-blur-sm hover:border-royal hover:text-ink sm:left-3 sm:right-auto sm:px-3 sm:py-2 sm:text-xs sm:font-semibold sm:text-ink/70 sm:shadow-lg"
       >
         Cookie settings
       </button>
