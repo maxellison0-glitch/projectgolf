@@ -2,13 +2,17 @@
 
 import { useCart } from "@/context/CartContext";
 
-export function CartBadge() {
+export function CartBadge({ transparent = false }: { transparent?: boolean }) {
   const { itemCount, openCart } = useCart();
 
   return (
     <button
       onClick={openCart}
-      className="relative flex items-center gap-1.5 rounded-full bg-royal px-5 py-2 text-sm font-semibold text-ivory transition-colors hover:bg-royal-deep"
+      className={`relative flex items-center gap-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+        transparent
+          ? "border border-ivory/30 bg-ivory/10 px-5 py-2 text-ivory backdrop-blur-sm hover:bg-ivory/20"
+          : "bg-royal px-5 py-2 text-ivory hover:bg-royal-deep"
+      }`}
       aria-label={`Open bag, ${itemCount} items`}
     >
       <svg

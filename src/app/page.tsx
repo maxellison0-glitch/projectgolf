@@ -45,14 +45,14 @@ export default function Home() {
   return (
     <div>
       {/* ── Hero: full-bleed lifestyle image, J.Lindeberg / Manors style ── */}
-      <section className="relative -mt-[93px] h-[100svh] min-h-[600px] overflow-hidden lg:-mt-[178px]">
+      <section className="relative -mt-[72px] h-[100svh] min-h-[600px] overflow-hidden lg:-mt-[90px]">
         <Image
           src="/products/hero/hero-walking-mobile.png"
           alt="Golfer wearing House of Par apparel walking on a British links course at golden hour"
           fill
           priority
           sizes="100vw"
-          quality={85}
+          quality={90}
           className="object-cover object-[50%_30%] lg:hidden"
         />
         <Image
@@ -61,19 +61,20 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          quality={85}
+          quality={90}
           className="hidden object-cover object-[50%_30%] lg:block"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-12 sm:px-8 sm:pb-16 md:pb-20">
+          <div className="rise mb-4 h-px w-12 bg-gold/60" />
           <p className="rise text-[11px] font-semibold uppercase tracking-[0.22em] text-ivory/70">
             House of Par Clothing
           </p>
-          <h1 className="rise rise-1 mt-3 font-display text-4xl uppercase leading-[1.08] tracking-[0.03em] text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="rise rise-1 mt-3 font-display text-4xl uppercase leading-[1.08] tracking-[0.03em] text-ivory drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl">
             Worn to a<br />standard.
           </h1>
-          <p className="rise rise-2 mt-4 max-w-md font-voice text-lg italic text-ivory/85 sm:text-xl">
+          <p className="rise rise-2 mt-4 max-w-md font-voice text-lg italic text-ivory/85 drop-shadow-sm sm:text-xl">
             Golf-ready apparel designed for the course and comfortable enough
             for everything after it.
           </p>
@@ -86,7 +87,7 @@ export default function Home() {
             </Link>
             <Link
               href="/shop"
-              className="inline-block rounded-full border border-ivory/40 px-7 py-3 text-sm font-semibold text-ivory transition-colors hover:bg-ivory/10"
+              className="inline-block rounded-full border border-ivory/40 px-7 py-3 text-sm font-semibold text-ivory backdrop-blur-sm transition-colors hover:bg-ivory/10"
             >
               View equipment
             </Link>
