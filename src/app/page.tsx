@@ -12,32 +12,32 @@ export const metadata: Metadata = {
 
 const CLOTHING_ITEMS = [
   {
-    name: "Performance Quarter Zip",
+    name: "Quarter Zip — Navy",
     price: "55",
-    img: "/products/clothing/quarter-zip-hero.png",
-    href: "/clothing",
+    img: "/products/clothing/quarter-zip-navy.png",
+    href: "/clothing#outerwear",
     tag: "Signature piece",
+  },
+  {
+    name: "Quarter Zip — White",
+    price: "55",
+    img: "/products/clothing/quarter-zip-white.png",
+    href: "/clothing#outerwear",
+    tag: "New colourway",
   },
   {
     name: "Performance Polo",
     price: "40",
     img: "/products/clothing/polo-hero.png",
-    href: "/clothing",
+    href: "/clothing#tops",
     tag: "Course ready",
   },
   {
     name: "Tour Hoodie",
     price: "60",
     img: "/products/clothing/hoodie-hero.png",
-    href: "/clothing",
+    href: "/clothing#outerwear",
     tag: "Off-course",
-  },
-  {
-    name: "Structured Cap",
-    price: "25",
-    img: "/products/clothing/cap-hero.png",
-    href: "/clothing",
-    tag: "Headwear",
   },
 ];
 

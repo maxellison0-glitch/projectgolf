@@ -20,13 +20,22 @@ type ClothingItem = {
 
 const CLOTHING: ClothingItem[] = [
   {
-    name: "Performance Quarter Zip",
+    name: "Quarter Zip — Navy",
     category: "outerwear",
     description:
-      "Brushed athletic fleece with a quarter zip and embroidered HOP crest on the left chest. Cut for the course — room in the shoulders for a full swing.",
+      "Navy performance quarter zip with white zipper trim and gold HOP crest embroidered on the left chest. Cut for the course — room in the shoulders for a full swing.",
     price: "£55",
-    details: ["Brushed polyester fleece", "YKK quarter zip", "Embroidered gold HOP crest", "Raglan sleeve for swing freedom"],
-    image: "/products/clothing/quarter-zip-hero.png",
+    details: ["Brushed polyester fleece", "YKK quarter zip with white trim", "Embroidered gold HOP crest", "Raglan sleeve for swing freedom"],
+    image: "/products/clothing/quarter-zip-navy.png",
+  },
+  {
+    name: "Quarter Zip — White",
+    category: "outerwear",
+    description:
+      "White performance quarter zip with navy zipper trim and navy HOP crest embroidered on the left chest. The same course-ready cut in a clean colourway.",
+    price: "£55",
+    details: ["Brushed polyester fleece", "YKK quarter zip with navy trim", "Embroidered navy HOP crest", "Raglan sleeve for swing freedom"],
+    image: "/products/clothing/quarter-zip-white.png",
   },
   {
     name: "Tour Hoodie",
@@ -105,7 +114,7 @@ const ACCESSORIES: AccessoryItem[] = [
 
 function ProductCard({ item }: { item: ClothingItem }) {
   return (
-    <div className="group cursor-pointer">
+    <div className="group">
       <div className="overflow-hidden rounded-lg bg-paper">
         <div className="relative aspect-[3/4] w-full">
           <Image
@@ -251,11 +260,28 @@ export default function ClothingPage() {
             Caps
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
-            {[...headwear, ...womens].map((item) => (
+            {headwear.map((item) => (
               <ProductCard key={item.name} item={item} />
             ))}
           </div>
         </section>
+
+        {/* ── Womens ── */}
+        {womens.length > 0 && (
+          <section id="womens" className="mt-16 scroll-mt-24 sm:mt-20">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/40">
+              Womens
+            </p>
+            <h2 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
+              Womens collection
+            </h2>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+              {womens.map((item) => (
+                <ProductCard key={item.name} item={item} />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── Lifestyle image break ── */}
         <div className="relative -mx-4 mt-16 h-[50vh] min-h-[300px] overflow-hidden sm:mx-0 sm:mt-20 sm:rounded-lg">
@@ -287,26 +313,16 @@ export default function ClothingPage() {
               Accessories
             </h2>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-6">
             {ACCESSORIES.map((acc) => (
-              <div key={acc.name} className="group">
-                <div className="overflow-hidden rounded-lg bg-paper">
-                  <div className="relative aspect-square w-full">
-                    <Image
-                      src={acc.image}
-                      alt={acc.name}
-                      fill
-                      sizes="33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                </div>
-                <div className="mt-3">
-                  <h3 className="text-sm font-medium text-ink sm:text-base">
-                    {acc.name}
-                  </h3>
-                  <p className="text-sm text-ink/60">{acc.price}</p>
-                </div>
+              <div key={acc.name} className="rounded-lg border border-hairline bg-paper px-5 py-6 sm:px-6 sm:py-8">
+                <h3 className="font-display text-base text-ink sm:text-lg">
+                  {acc.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-gold">{acc.price}</p>
+                <p className="mt-3 text-[13px] leading-relaxed text-ink/55 sm:text-sm">
+                  {acc.description}
+                </p>
               </div>
             ))}
           </div>
