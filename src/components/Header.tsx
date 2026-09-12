@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MobileNav } from "./MobileNav";
+import { CartBadge } from "./CartBadge";
 
 export function Header() {
   return (
@@ -68,13 +69,8 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Right: Shop CTA */}
-        <Link
-          href="/clothing"
-          className="rounded-full bg-royal px-5 py-2 text-sm font-semibold text-ivory transition-colors hover:bg-royal-deep"
-        >
-          Shop
-        </Link>
+        {/* Right: Bag button */}
+        <CartBadge />
       </div>
     </header>
   );

@@ -10,6 +10,8 @@ import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { CartProvider } from "@/context/CartContext";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const marcellus = Marcellus({
   weight: "400",
@@ -82,10 +84,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd data={[organisationJsonLd(), websiteJsonLd()]} />
         <AnalyticsScripts />
         <AnalyticsPageView />
-        <AnnouncementBar />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CartProvider>
+          <AnnouncementBar />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
         <CookieConsent />
       </body>
     </html>

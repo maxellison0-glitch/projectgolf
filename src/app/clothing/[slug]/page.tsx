@@ -82,9 +82,24 @@ export default async function ClothingProductPage({ params }: Props) {
     ],
   };
 
+  const faqJsonLd =
+    product.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: product.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: { "@type": "Answer", text: faq.a },
+          })),
+        }
+      : null;
+
+  const jsonLdData = [productJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
+
   return (
     <>
-      <JsonLd data={[productJsonLd, breadcrumbJsonLd]} />
+      <JsonLd data={jsonLdData} />
       <ClothingLanding product={product} />
     </>
   );

@@ -3,23 +3,27 @@
 import { useState } from "react";
 import { gbp } from "@/lib/format";
 import { trackGa4, trackMeta } from "@/lib/analytics";
+import { useCart } from "@/context/CartContext";
 import type { BuyableProduct } from "@/components/BuyBox";
 
-export function ClothingBuyBox({ product }: { product: BuyableProduct }) {
+export function ClothingBuyBox({
+  product,
+  image,
+}: {
+  product: BuyableProduct;
+  image: string;
+}) {
   const [variantId, setVariantId] = useState(product.variants[0].id);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { addItem } = useCart();
   const variant = product.variants.find((v) => v.id === variantId)!;
 
-  async function checkout() {
-    setLoading(true);
-    setError(null);
-    trackMeta("InitiateCheckout", {
+  function handleAddToBag() {
+    trackMeta("AddToCart", {
       content_name: product.name,
       value: variant.price / 100,
       currency: "GBP",
     });
-    trackGa4("begin_checkout", {
+    trackGa4("add_to_cart", {
       currency: "GBP",
       value: variant.price / 100,
       items: [
@@ -33,23 +37,15 @@ export function ClothingBuyBox({ product }: { product: BuyableProduct }) {
         },
       ],
     });
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug: product.slug, variantId }),
-      });
-      const data = await res.json();
-      if (res.ok && data.url) {
-        window.location.assign(data.url);
-      } else {
-        setError(data.error ?? "Checkout isn't available right now.");
-      }
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+
+    addItem({
+      slug: product.slug,
+      name: product.name,
+      variantId: variant.id,
+      variantLabel: variant.label,
+      price: variant.price,
+      image,
+    });
   }
 
   return (
@@ -58,7 +54,9 @@ export function ClothingBuyBox({ product }: { product: BuyableProduct }) {
 
       {product.variants.length > 1 && (
         <div className="mt-5">
-          <p className="mb-2.5 text-sm font-medium text-ink/60">Size</p>
+          <div className="mb-2.5 flex items-center justify-between">
+            <p className="text-sm font-medium text-ink/60">Size</p>
+          </div>
           <div className="flex flex-wrap gap-2">
             {product.variants.map((v) => (
               <button
@@ -79,14 +77,11 @@ export function ClothingBuyBox({ product }: { product: BuyableProduct }) {
       )}
 
       <button
-        onClick={checkout}
-        disabled={loading}
-        className="mt-6 w-full rounded-full bg-royal py-4 text-lg font-semibold text-ivory transition-colors hover:bg-royal-deep disabled:opacity-60"
+        onClick={handleAddToBag}
+        className="mt-6 w-full rounded-full bg-royal py-4 text-lg font-semibold text-ivory transition-colors hover:bg-royal-deep"
       >
-        {loading ? "Preparing checkout…" : "Buy now"}
+        Add to Bag
       </button>
-
-      {error && <p className="mt-2 text-center text-sm text-red-700">{error}</p>}
 
       <div className="mt-4 flex items-center justify-center gap-4 text-sm text-ink/50">
         <span>Free UK delivery</span>
