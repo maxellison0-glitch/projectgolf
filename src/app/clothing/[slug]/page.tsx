@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `/clothing/${product.slug}`;
 
   return {
-    title: `${product.name} | House of Par`,
+    title: product.name,
     description: `${product.subhook} Free UK tracked delivery and 30-day returns.`,
     alternates: { canonical },
     openGraph: {
@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: "en_GB",
       url: canonical,
       siteName: BRAND.name,
-      title: `${product.name} | House of Par`,
+      title: `${product.name} | ${BRAND.name}`,
       description: product.subhook,
       images: product.images.map((image) => ({ url: image, alt: product.name })),
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | House of Par`,
+      title: `${product.name} | ${BRAND.name}`,
       description: product.subhook,
       images: product.images[0] ? [product.images[0]] : undefined,
     },
