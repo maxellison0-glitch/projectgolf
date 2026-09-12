@@ -85,8 +85,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AnalyticsScripts />
         <AnalyticsPageView />
         <CartProvider>
-          <AnnouncementBar />
-          <Header />
+          <div className="sticky top-0 z-40">
+            <AnnouncementBar />
+            <Header />
+          </div>
           <main className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
