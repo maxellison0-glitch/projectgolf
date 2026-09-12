@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { BRAND } from "@/config/brand";
-import { getProduct, PRODUCTS } from "@/data/products";
+import { getProduct, PRODUCTS, CLOTHING_SLUGS } from "@/data/products";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductLanding } from "@/components/ProductLanding";
 import { absoluteUrl, RETURN_POLICY, SHIPPING_DETAILS, SITE_URL } from "@/lib/seo";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
+const clothingSlugs: readonly string[] = CLOTHING_SLUGS;
+
 export function generateStaticParams() {
-  return PRODUCTS.map((product) => ({ slug: product.slug }));
+  return PRODUCTS
+    .filter((p) => !clothingSlugs.includes(p.slug))
+    .map((product) => ({ slug: product.slug }));
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
@@ -44,6 +48,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
+  if (clothingSlugs.includes(slug)) redirect(`/clothing/${slug}`);
   const product = getProduct(slug);
   if (!product) notFound();
 
