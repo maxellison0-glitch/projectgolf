@@ -47,11 +47,22 @@ export default function Home() {
       {/* ── Hero: full-bleed lifestyle image, J.Lindeberg / Manors style ── */}
       <section className="relative -mt-[73px] h-[100svh] min-h-[600px] overflow-hidden">
         <Image
+          src="/products/hero/hero-walking-mobile.png"
+          alt="Golfer wearing House of Par apparel walking on a British links course at golden hour"
+          fill
+          priority
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-[50%_30%] lg:hidden"
+        />
+        <Image
           src="/products/hero/hero-walking.png"
           alt="Golfer wearing House of Par apparel walking on a British links course at golden hour"
           fill
           priority
-          className="object-cover object-[50%_30%]"
+          sizes="100vw"
+          quality={85}
+          className="hidden object-cover object-[50%_30%] lg:block"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/10" />
 
@@ -105,6 +116,7 @@ export default function Home() {
                     src={item.img}
                     alt={item.name}
                     fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
@@ -137,10 +149,20 @@ export default function Home() {
       {/* ── Lifestyle image break ── */}
       <section className="relative h-[70vh] min-h-[400px] overflow-hidden sm:h-[60vh]">
         <Image
+          src="/products/hero/hero-group-mobile.png"
+          alt="Golfers wearing House of Par clothing walking on a links course at sunrise"
+          fill
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-center lg:hidden"
+        />
+        <Image
           src="/products/hero/hero-group.png"
           alt="Golfers wearing House of Par clothing walking on a links course at sunrise"
           fill
-          className="object-cover object-center"
+          sizes="100vw"
+          quality={85}
+          className="hidden object-cover object-center lg:block"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 text-center sm:px-8 sm:pb-14">

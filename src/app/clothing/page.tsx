@@ -112,6 +112,7 @@ function ProductCard({ item }: { item: ClothingItem }) {
             src={item.image}
             alt={item.name}
             fill
+            sizes="(min-width: 1024px) 33vw, 50vw"
             className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </div>
@@ -140,10 +141,21 @@ export default function ClothingPage() {
       {/* ── Hero banner ── */}
       <div className="relative -mt-[73px] h-[65svh] min-h-[360px] sm:h-[55vh]">
         <Image
+          src="/products/hero/hero-polo-detail-mobile.png"
+          alt="Close-up of House of Par polo on the course"
+          fill
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-[50%_25%] lg:hidden"
+          priority
+        />
+        <Image
           src="/products/hero/hero-polo-detail.png"
           alt="Close-up of House of Par polo on the course"
           fill
-          className="object-cover object-[50%_25%]"
+          sizes="100vw"
+          quality={85}
+          className="hidden object-cover object-[50%_25%] lg:block"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/5" />
@@ -173,6 +185,7 @@ export default function ClothingPage() {
                 src="/products/hop-quarter-zip-navy.jpg"
                 alt="HOP Quarter Zip in navy"
                 fill
+                sizes="(min-width: 640px) 50vw, 100vw"
                 className="object-cover object-top"
               />
             </div>
@@ -247,10 +260,20 @@ export default function ClothingPage() {
         {/* ── Lifestyle image break ── */}
         <div className="relative -mx-4 mt-16 h-[50vh] min-h-[300px] overflow-hidden sm:mx-0 sm:mt-20 sm:rounded-lg">
           <Image
+            src="/products/hero/hero-group-mobile.png"
+            alt="Golfers in House of Par clothing on the links"
+            fill
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-center lg:hidden"
+          />
+          <Image
             src="/products/hero/hero-group.png"
             alt="Golfers in House of Par clothing on the links"
             fill
-            className="object-cover object-center"
+            sizes="100vw"
+            quality={85}
+            className="hidden object-cover object-center lg:block"
           />
         </div>
 
@@ -273,6 +296,7 @@ export default function ClothingPage() {
                       src={acc.image}
                       alt={acc.name}
                       fill
+                      sizes="33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   </div>
