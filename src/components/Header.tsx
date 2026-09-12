@@ -55,19 +55,19 @@ export function Header() {
             <img
               src="/brand/seal-mark.svg"
               alt="House of Par"
-              width={44}
-              height={44}
-              className={`h-11 w-11 object-contain drop-shadow-sm transition-all duration-300 ${
+              width={56}
+              height={56}
+              className={`h-14 w-14 object-contain drop-shadow-sm transition-all duration-300 ${
                 t ? "brightness-[1.4] saturate-50" : ""
               }`}
             />
             <span
-              className={`hidden font-display text-lg tracking-[0.12em] transition-colors duration-300 sm:inline sm:text-xl ${
+              className={`hidden font-display text-xl tracking-[0.12em] transition-colors duration-300 sm:inline sm:text-2xl ${
                 t ? "text-ivory drop-shadow-sm" : "text-royal"
               }`}
             >
               HOUSE{" "}
-              <span className="font-voice text-base italic sm:text-lg">
+              <span className="font-voice text-lg italic sm:text-xl">
                 of
               </span>{" "}
               PAR
@@ -77,7 +77,7 @@ export function Header() {
         </div>
 
         {/* ── Desktop — single row: nav | brand | nav + bag ── */}
-        <div className="hidden lg:flex lg:items-center lg:justify-between lg:py-3.5">
+        <div className="hidden lg:flex lg:items-center lg:justify-between lg:py-4">
           <nav className="flex flex-1 items-center gap-8">
             {NAV_LEFT.map((link) => (
               <Link
@@ -94,24 +94,24 @@ export function Header() {
             ))}
           </nav>
 
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-4">
             <img
               src="/brand/seal-mark.svg"
               alt=""
               aria-hidden="true"
-              width={44}
-              height={44}
-              className={`h-11 w-11 object-contain drop-shadow-sm transition-all duration-300 ${
+              width={80}
+              height={80}
+              className={`h-20 w-20 object-contain drop-shadow-sm transition-all duration-300 ${
                 t ? "brightness-[1.4] saturate-50" : ""
               }`}
             />
             <span
-              className={`font-display text-[1.4rem] leading-none tracking-[0.14em] transition-colors duration-300 ${
+              className={`font-display text-[2.2rem] leading-none tracking-[0.14em] transition-colors duration-300 ${
                 t ? "text-ivory drop-shadow-sm" : "text-royal"
               }`}
             >
               HOUSE{" "}
-              <span className="font-voice text-[1.15rem] italic">of</span> PAR
+              <span className="font-voice text-[1.75rem] italic">of</span> PAR
             </span>
           </Link>
 
