@@ -35,6 +35,24 @@ export type Product = {
   guarantee: string;
 };
 
+const CLOTHING_FAQS = [
+  {
+    q: "How long does delivery take?",
+    a: "Your order is dispatched within 24–48 hours and typically arrives within 2–3 weeks, fully tracked door to door. You'll get the tracking number by email as soon as it ships.",
+  },
+  {
+    q: "What if it doesn't fit?",
+    a: "You have 30 days from delivery to return or exchange for a different size — no quibbles. See our returns policy for the simple process.",
+  },
+  {
+    q: "How should I care for the garment?",
+    a: "Machine wash cold, inside out, with like colours. Hang dry or tumble on low. Do not iron the embroidery directly.",
+  },
+];
+
+const CLOTHING_GUARANTEE =
+  "30-day returns — if it doesn't fit or meet your expectation, send it back for a full refund.";
+
 const SHARED_FAQS = [
   {
     q: "How long does delivery take?",
@@ -196,7 +214,200 @@ export const PRODUCTS: Product[] = [
     images: ["/products/impact-hero.jpg", "/products/impact-lifestyle.jpg"],
     guarantee: GUARANTEE,
   },
+  // ── Clothing ──
+  {
+    slug: "quarter-zip-navy",
+    name: "Quarter Zip — Navy",
+    category: "Outerwear",
+    hook: "The signature layer",
+    subhook: "Navy performance quarter zip with white zipper trim and gold HOP crest embroidered on the left chest.",
+    description: "Brushed polyester fleece quarter zip in house navy. YKK zip with white trim, raglan sleeves for swing freedom, and the HOP crest in antique gold thread.",
+    cogsPence: 1500,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "s", label: "Small", price: 5500 },
+      { id: "m", label: "Medium", price: 5500 },
+      { id: "l", label: "Large", price: 5500 },
+      { id: "xl", label: "X-Large", price: 5500 },
+    ],
+    benefits: [
+      { title: "Course-cut fit", body: "Room in the shoulders for a full swing, tailored everywhere else. Designed to move with you, not against you." },
+      { title: "Brushed fleece warmth", body: "Soft-brushed polyester fleece that keeps you warm on early tee times without the bulk of a full jacket." },
+      { title: "Embroidered, never printed", body: "The HOP crest is stitched in antique gold thread — no cracking, no peeling, built to last." },
+    ],
+    howItWorks: [
+      { step: "Brushed polyester fleece", body: "Warm, breathable, and machine washable." },
+      { step: "YKK quarter zip", body: "White trim detail with a stand collar that sits clean." },
+      { step: "Raglan sleeve", body: "No shoulder seam — full range of motion through the swing." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/quarter-zip-navy.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "quarter-zip-white",
+    name: "Quarter Zip — White",
+    category: "Outerwear",
+    hook: "The clean colourway",
+    subhook: "White performance quarter zip with navy zipper trim and navy HOP crest embroidered on the left chest.",
+    description: "Brushed polyester fleece quarter zip in clean white. YKK zip with navy trim, raglan sleeves, and the HOP crest in navy thread.",
+    cogsPence: 1500,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "s", label: "Small", price: 5500 },
+      { id: "m", label: "Medium", price: 5500 },
+      { id: "l", label: "Large", price: 5500 },
+      { id: "xl", label: "X-Large", price: 5500 },
+    ],
+    benefits: [
+      { title: "Course-cut fit", body: "Room in the shoulders for a full swing, tailored everywhere else. Designed to move with you, not against you." },
+      { title: "Brushed fleece warmth", body: "Soft-brushed polyester fleece that keeps you warm on early tee times without the bulk of a full jacket." },
+      { title: "Embroidered, never printed", body: "The HOP crest is stitched in navy thread — no cracking, no peeling, built to last." },
+    ],
+    howItWorks: [
+      { step: "Brushed polyester fleece", body: "Warm, breathable, and machine washable." },
+      { step: "YKK quarter zip", body: "Navy trim detail with a stand collar that sits clean." },
+      { step: "Raglan sleeve", body: "No shoulder seam — full range of motion through the swing." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/quarter-zip-white.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "tour-hoodie",
+    name: "Tour Hoodie",
+    category: "Outerwear",
+    hook: "Off-course, on point",
+    subhook: "Heavyweight 400gsm cotton hoodie with the full House of Par crest embroidered on the back yoke.",
+    description: "400gsm brushed cotton hoodie with a relaxed fit. The full HOP crest is embroidered on the back yoke. Ribbed cuffs and hem.",
+    cogsPence: 1600,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "s", label: "Small", price: 6000 },
+      { id: "m", label: "Medium", price: 6000 },
+      { id: "l", label: "Large", price: 6000 },
+      { id: "xl", label: "X-Large", price: 6000 },
+    ],
+    benefits: [
+      { title: "Heavyweight 400gsm cotton", body: "Thick, substantial cotton that holds its shape wash after wash. This is not a fast-fashion hoodie." },
+      { title: "Full crest embroidery", body: "The complete House of Par crest on the back yoke, stitched — not printed — for a detail you can feel." },
+      { title: "Relaxed fit", body: "Room to layer over a polo or tee. For the range, the 19th, and everything in between." },
+    ],
+    howItWorks: [
+      { step: "400gsm brushed cotton", body: "Heavyweight, pre-shrunk, and machine washable." },
+      { step: "Embroidered back crest", body: "The full House of Par crest in gold thread." },
+      { step: "Ribbed cuffs and hem", body: "Hold their shape and keep the cold out." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/hoodie-hero.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "performance-polo",
+    name: "Performance Polo",
+    category: "Tops",
+    hook: "First tee to lunch",
+    subhook: "Moisture-wicking stretch polo in house navy with a gold HOP monogram on the left chest.",
+    description: "Quick-dry stretch polo with a three-button placket and slim athletic fit. Gold HOP monogram embroidered on the left chest.",
+    cogsPence: 1000,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "s", label: "Small", price: 4000 },
+      { id: "m", label: "Medium", price: 4000 },
+      { id: "l", label: "Large", price: 4000 },
+      { id: "xl", label: "X-Large", price: 4000 },
+    ],
+    benefits: [
+      { title: "Quick-dry stretch fabric", body: "Wicks moisture away from the skin so you stay dry through 18 holes in summer heat." },
+      { title: "Slim athletic fit", body: "Looks as good at lunch as it does on the first tee. Cut close but not tight — room for a full shoulder turn." },
+      { title: "Gold HOP monogram", body: "Embroidered on the left chest in gold thread. Subtle, lasting, unmistakable." },
+    ],
+    howItWorks: [
+      { step: "Quick-dry fabric", body: "Moisture-wicking stretch that moves with you." },
+      { step: "Three-button placket", body: "Clean, classic collar that sits right." },
+      { step: "Slim athletic fit", body: "Tailored enough for the clubhouse, free enough for the course." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/polo-hero.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "long-sleeve-athletic-tee",
+    name: "Long Sleeve Athletic Tee",
+    category: "Tops",
+    hook: "UV protection, all-season",
+    subhook: "Lightweight long sleeve with UPF 30+ protection and a subtle HOP wordmark on the sleeve.",
+    description: "Slim-fit long sleeve with UPF 30+ fabric, flatlock seams, and thumbhole cuffs. HOP wordmark on the left sleeve.",
+    cogsPence: 900,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "s", label: "Small", price: 3500 },
+      { id: "m", label: "Medium", price: 3500 },
+      { id: "l", label: "Large", price: 3500 },
+      { id: "xl", label: "X-Large", price: 3500 },
+    ],
+    benefits: [
+      { title: "UPF 30+ protection", body: "Blocks harmful UV rays on summer rounds and winter range sessions without needing to reapply sunscreen." },
+      { title: "Flatlock seams", body: "No chafing, no irritation — even under a jacket or quarter zip." },
+      { title: "Thumbhole cuffs", body: "Keep the sleeves in place through your swing and add warmth around the wrists." },
+    ],
+    howItWorks: [
+      { step: "UPF 30+ fabric", body: "Lightweight, breathable UV protection." },
+      { step: "Flatlock seams", body: "Smooth, chafe-free layering." },
+      { step: "Sleeve wordmark", body: "Subtle HOP branding on the left sleeve." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/longsleeve-hero.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "structured-cap",
+    name: "Structured Cap",
+    category: "Headwear",
+    hook: "Gold thread, every angle",
+    subhook: "Six-panel structured cap with a pre-curved peak and gold HOP monogram front and centre.",
+    description: "Six-panel structured crown cap with pre-curved peak. Gold thread HOP embroidery front and centre, metal clasp adjuster at the back.",
+    cogsPence: 600,
+    supplierUrl: "TBD",
+    variants: [
+      { id: "one-size", label: "One Size", price: 2500 },
+    ],
+    benefits: [
+      { title: "Structured crown", body: "Six-panel construction that holds its shape — no floppy, formless caps here." },
+      { title: "Gold thread embroidery", body: "The HOP monogram stitched in gold thread, front and centre. Clean, classic, unmissable." },
+      { title: "Metal clasp adjuster", body: "Fits any head. The metal clasp at the back sits flush and looks as good as the front." },
+    ],
+    howItWorks: [
+      { step: "Six-panel structured crown", body: "Holds its shape all day." },
+      { step: "Pre-curved peak", body: "Ready to wear out of the box — no bending needed." },
+      { step: "Metal clasp adjuster", body: "One size fits all with a clean finish." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/cap-hero.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
 ];
+
+export const CLOTHING_SLUGS = [
+  "quarter-zip-navy",
+  "quarter-zip-white",
+  "tour-hoodie",
+  "performance-polo",
+  "long-sleeve-athletic-tee",
+  "structured-cap",
+] as const;
+
+export function getClothingProducts(): Product[] {
+  return PRODUCTS.filter((p) =>
+    (CLOTHING_SLUGS as readonly string[]).includes(p.slug)
+  );
+}
 
 // Catalogue numbering: position in PRODUCTS is the product's standard number.
 // New products append to the list and take the next number.
