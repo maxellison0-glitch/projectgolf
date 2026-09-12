@@ -336,36 +336,6 @@ export const PRODUCTS: Product[] = [
     guarantee: CLOTHING_GUARANTEE,
   },
   {
-    slug: "long-sleeve-athletic-tee",
-    name: "Long Sleeve Athletic Tee",
-    category: "Tops",
-    hook: "UV protection, all-season",
-    subhook: "Lightweight long sleeve with UPF 30+ protection and a subtle HOP wordmark on the sleeve.",
-    description: "Slim-fit long sleeve with UPF 30+ fabric, flatlock seams, and thumbhole cuffs. HOP wordmark on the left sleeve.",
-    cogsPence: 900,
-    supplierUrl: "TBD",
-    variants: [
-      { id: "s", label: "Small", price: 3500 },
-      { id: "m", label: "Medium", price: 3500 },
-      { id: "l", label: "Large", price: 3500 },
-      { id: "xl", label: "X-Large", price: 3500 },
-    ],
-    benefits: [
-      { title: "UPF 30+ protection", body: "Blocks harmful UV rays on summer rounds and winter range sessions without needing to reapply sunscreen." },
-      { title: "Flatlock seams", body: "No chafing, no irritation — even under a jacket or quarter zip." },
-      { title: "Thumbhole cuffs", body: "Keep the sleeves in place through your swing and add warmth around the wrists." },
-    ],
-    howItWorks: [
-      { step: "UPF 30+ fabric", body: "Lightweight, breathable UV protection." },
-      { step: "Flatlock seams", body: "Smooth, chafe-free layering." },
-      { step: "Sleeve wordmark", body: "Subtle HOP branding on the left sleeve." },
-    ],
-    faqs: [...CLOTHING_FAQS],
-    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
-    images: ["/products/clothing/longsleeve-hero.png"],
-    guarantee: CLOTHING_GUARANTEE,
-  },
-  {
     slug: "structured-cap",
     name: "Structured Cap",
     category: "Headwear",
@@ -399,7 +369,6 @@ export const CLOTHING_SLUGS = [
   "quarter-zip-white",
   "tour-hoodie",
   "performance-polo",
-  "long-sleeve-athletic-tee",
   "structured-cap",
 ] as const;
 

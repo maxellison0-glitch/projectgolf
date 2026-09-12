@@ -61,16 +61,6 @@ const CLOTHING: ClothingItem[] = [
     image: "/products/clothing/polo-hero.png",
   },
   {
-    slug: "long-sleeve-athletic-tee",
-    name: "Long Sleeve Athletic Tee",
-    category: "tops",
-    description:
-      "Lightweight long sleeve with a slim fit and subtle HOP wordmark on the sleeve. UV-protective fabric for summer rounds and winter range sessions.",
-    price: "£35",
-    details: ["UPF 30+ fabric", "Flatlock seams", "Sleeve HOP wordmark", "Thumbhole cuffs"],
-    image: "/products/clothing/longsleeve-hero.png",
-  },
-  {
     slug: "structured-cap",
     name: "Structured Cap",
     category: "headwear",
@@ -220,7 +210,7 @@ export default function ClothingPage() {
             Tops
           </p>
           <h2 className="mt-2 font-display text-2xl text-ink sm:text-3xl">
-            Polos &amp; long sleeves
+            Polos
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {tops.map((item) => (
