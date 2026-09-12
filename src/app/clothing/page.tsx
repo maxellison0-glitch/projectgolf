@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 };
 
 type ClothingItem = {
+  slug: string;
   name: string;
-  category: "tops" | "outerwear" | "headwear" | "womens";
+  category: "tops" | "outerwear" | "headwear";
   description: string;
   price: string;
   details: string[];
@@ -20,15 +21,27 @@ type ClothingItem = {
 
 const CLOTHING: ClothingItem[] = [
   {
-    name: "Performance Quarter Zip",
+    slug: "quarter-zip-navy",
+    name: "Quarter Zip — Navy",
     category: "outerwear",
     description:
-      "Brushed athletic fleece with a quarter zip and embroidered HOP crest on the left chest. Cut for the course — room in the shoulders for a full swing.",
+      "Navy performance quarter zip with white zipper trim and gold HOP crest embroidered on the left chest. Cut for the course — room in the shoulders for a full swing.",
     price: "£55",
-    details: ["Brushed polyester fleece", "YKK quarter zip", "Embroidered gold HOP crest", "Raglan sleeve for swing freedom"],
-    image: "/products/clothing/quarter-zip-hero.png",
+    details: ["Brushed polyester fleece", "YKK quarter zip with white trim", "Embroidered gold HOP crest", "Raglan sleeve for swing freedom"],
+    image: "/products/clothing/quarter-zip-navy.png",
   },
   {
+    slug: "quarter-zip-white",
+    name: "Quarter Zip — White",
+    category: "outerwear",
+    description:
+      "White performance quarter zip with navy zipper trim and navy HOP crest embroidered on the left chest. The same course-ready cut in a clean colourway.",
+    price: "£55",
+    details: ["Brushed polyester fleece", "YKK quarter zip with navy trim", "Embroidered navy HOP crest", "Raglan sleeve for swing freedom"],
+    image: "/products/clothing/quarter-zip-white.png",
+  },
+  {
+    slug: "tour-hoodie",
     name: "Tour Hoodie",
     category: "outerwear",
     description:
@@ -38,6 +51,7 @@ const CLOTHING: ClothingItem[] = [
     image: "/products/clothing/hoodie-hero.png",
   },
   {
+    slug: "performance-polo",
     name: "Performance Polo",
     category: "tops",
     description:
@@ -47,6 +61,7 @@ const CLOTHING: ClothingItem[] = [
     image: "/products/clothing/polo-hero.png",
   },
   {
+    slug: "long-sleeve-athletic-tee",
     name: "Long Sleeve Athletic Tee",
     category: "tops",
     description:
@@ -56,6 +71,7 @@ const CLOTHING: ClothingItem[] = [
     image: "/products/clothing/longsleeve-hero.png",
   },
   {
+    slug: "structured-cap",
     name: "Structured Cap",
     category: "headwear",
     description:
@@ -64,54 +80,42 @@ const CLOTHING: ClothingItem[] = [
     details: ["Six-panel structured crown", "Pre-curved peak", "Gold thread HOP embroidery", "Metal clasp adjuster"],
     image: "/products/clothing/cap-hero.png",
   },
-  {
-    name: "Polo Skirt",
-    category: "womens",
-    description:
-      "Performance skirt with built-in shorts and a side pocket. Subtle gold HOP tab on the hem. Pairs with the performance polo.",
-    price: "£40",
-    details: ["Built-in compression shorts", "Side zip pocket", "Gold HOP hem tab", "Mid-thigh length"],
-    image: "/products/clothing/skirt-hero.png",
-  },
 ];
 
 type AccessoryItem = {
   name: string;
   price: string;
   description: string;
-  image: string;
 };
 
 const ACCESSORIES: AccessoryItem[] = [
   {
     name: "Tour Socks — 3 Pack",
     price: "£12",
-    description: "Cushioned cotton-blend ankle socks with a woven HOP monogram.",
-    image: "/products/clothing/accessories-flatlay.png",
+    description: "Full-length cushioned cotton socks with a woven HOP monogram.",
   },
   {
     name: "Caddie Towel",
     price: "£15",
-    description: "Waffle-weave microfibre towel with an embroidered crest and carabiner clip.",
-    image: "/products/clothing/accessories-flatlay.png",
+    description: "White waffle-weave microfibre towel with an embroidered crest and carabiner clip.",
   },
   {
-    name: "Ball Marker Set",
+    name: "Golf Balls — Sleeve of 3",
     price: "£10",
-    description: "Three brass-finish ball markers with the HOP monogram in a branded tin.",
-    image: "/products/clothing/accessories-flatlay.png",
+    description: "Three-piece tour-spec golf balls with the HOP monogram in a branded sleeve.",
   },
 ];
 
 function ProductCard({ item }: { item: ClothingItem }) {
   return (
-    <div className="group cursor-pointer">
+    <Link href={`/clothing/${item.slug}`} className="group block">
       <div className="overflow-hidden rounded-lg bg-paper">
         <div className="relative aspect-[3/4] w-full">
           <Image
             src={item.image}
             alt={item.name}
             fill
+            sizes="(min-width: 1024px) 33vw, 50vw"
             className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </div>
@@ -125,7 +129,7 @@ function ProductCard({ item }: { item: ClothingItem }) {
           {item.description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -133,17 +137,27 @@ export default function ClothingPage() {
   const tops = CLOTHING.filter((i) => i.category === "tops");
   const outerwear = CLOTHING.filter((i) => i.category === "outerwear");
   const headwear = CLOTHING.filter((i) => i.category === "headwear");
-  const womens = CLOTHING.filter((i) => i.category === "womens");
 
   return (
     <div>
       {/* ── Hero banner ── */}
       <div className="relative -mt-[73px] h-[65svh] min-h-[360px] sm:h-[55vh]">
         <Image
+          src="/products/hero/hero-polo-detail-mobile.png"
+          alt="Close-up of House of Par polo on the course"
+          fill
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-[50%_25%] lg:hidden"
+          priority
+        />
+        <Image
           src="/products/hero/hero-polo-detail.png"
           alt="Close-up of House of Par polo on the course"
           fill
-          className="object-cover object-[50%_25%]"
+          sizes="100vw"
+          quality={85}
+          className="hidden object-cover object-[50%_25%] lg:block"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/5" />
@@ -166,14 +180,15 @@ export default function ClothingPage() {
 
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
         {/* ── Signature piece ── */}
-        <div className="overflow-hidden rounded-lg">
+        <Link href="/clothing/quarter-zip-navy" className="group block overflow-hidden rounded-lg">
           <div className="grid sm:grid-cols-2">
             <div className="relative aspect-[3/4] sm:aspect-auto sm:min-h-[420px]">
               <Image
                 src="/products/hop-quarter-zip-navy.jpg"
                 alt="HOP Quarter Zip in navy"
                 fill
-                className="object-cover object-top"
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
             <div className="flex flex-col justify-center bg-ink px-6 py-10 sm:px-10 sm:py-14">
@@ -197,7 +212,7 @@ export default function ClothingPage() {
               <p className="mt-5 font-display text-xl text-gold">£55</p>
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* ── Tops ── */}
         <section id="tops" className="mt-16 scroll-mt-24 sm:mt-20">
@@ -209,7 +224,7 @@ export default function ClothingPage() {
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {tops.map((item) => (
-              <ProductCard key={item.name} item={item} />
+              <ProductCard key={item.slug} item={item} />
             ))}
           </div>
         </section>
@@ -224,7 +239,7 @@ export default function ClothingPage() {
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {outerwear.map((item) => (
-              <ProductCard key={item.name} item={item} />
+              <ProductCard key={item.slug} item={item} />
             ))}
           </div>
         </section>
@@ -238,8 +253,8 @@ export default function ClothingPage() {
             Caps
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
-            {[...headwear, ...womens].map((item) => (
-              <ProductCard key={item.name} item={item} />
+            {headwear.map((item) => (
+              <ProductCard key={item.slug} item={item} />
             ))}
           </div>
         </section>
@@ -247,10 +262,20 @@ export default function ClothingPage() {
         {/* ── Lifestyle image break ── */}
         <div className="relative -mx-4 mt-16 h-[50vh] min-h-[300px] overflow-hidden sm:mx-0 sm:mt-20 sm:rounded-lg">
           <Image
+            src="/products/hero/hero-group-mobile.png"
+            alt="Golfers in House of Par clothing on the links"
+            fill
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-center lg:hidden"
+          />
+          <Image
             src="/products/hero/hero-group.png"
             alt="Golfers in House of Par clothing on the links"
             fill
-            className="object-cover object-center"
+            sizes="100vw"
+            quality={85}
+            className="hidden object-cover object-center lg:block"
           />
         </div>
 
@@ -264,25 +289,16 @@ export default function ClothingPage() {
               Accessories
             </h2>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-6">
             {ACCESSORIES.map((acc) => (
-              <div key={acc.name} className="group">
-                <div className="overflow-hidden rounded-lg bg-paper">
-                  <div className="relative aspect-square w-full">
-                    <Image
-                      src={acc.image}
-                      alt={acc.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                </div>
-                <div className="mt-3">
-                  <h3 className="text-sm font-medium text-ink sm:text-base">
-                    {acc.name}
-                  </h3>
-                  <p className="text-sm text-ink/60">{acc.price}</p>
-                </div>
+              <div key={acc.name} className="rounded-lg border border-hairline bg-paper px-5 py-6 sm:px-6 sm:py-8">
+                <h3 className="font-display text-base text-ink sm:text-lg">
+                  {acc.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-gold">{acc.price}</p>
+                <p className="mt-3 text-[13px] leading-relaxed text-ink/55 sm:text-sm">
+                  {acc.description}
+                </p>
               </div>
             ))}
           </div>
