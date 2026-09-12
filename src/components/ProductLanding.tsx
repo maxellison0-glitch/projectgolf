@@ -135,7 +135,7 @@ export function ProductLanding({ product }: { product: Product }) {
         </a>
       </section>
 
-      <StickyATC product={buyable} />
+      <StickyATC product={buyable} image={product.images[0] ?? ""} />
     </div>
   );
 }
