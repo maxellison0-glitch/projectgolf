@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
 import { getClothingProducts } from "@/data/products";
-import { ClothingBuyBox } from "@/components/ClothingBuyBox";
+import { ClothingProductView } from "@/components/ClothingProductView";
 import { StickyATC } from "@/components/StickyATC";
-import { ProductAccordion } from "@/components/ProductAccordion";
 
 export function ClothingLanding({ product }: { product: Product }) {
   const buyable = {
@@ -12,10 +11,11 @@ export function ClothingLanding({ product }: { product: Product }) {
     name: product.name,
     category: product.category,
     variants: product.variants,
+    variantType: product.variantType,
   };
 
   const related = getClothingProducts().filter((p) => p.slug !== product.slug);
-  const heroImage = product.images[0];
+  const heroImage = product.images[0] ?? "";
 
   const accordionItems = [
     {
@@ -59,45 +59,17 @@ export function ClothingLanding({ product }: { product: Product }) {
           </ol>
         </nav>
 
-        {/* Product hero: image + info (Manors 2-col layout) */}
-        <section className="grid items-start gap-8 pb-16 lg:grid-cols-2 lg:gap-14">
-          {/* Left: Image */}
-          <div className="overflow-hidden rounded-lg bg-paper">
-            <div className="relative aspect-[3/4] w-full">
-              <Image
-                src={heroImage}
-                alt={product.name}
-                fill
-                priority
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
-          </div>
-
-          {/* Right: Product info (sticky on desktop) */}
-          <div className="lg:sticky lg:top-24">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-              {product.category}
-            </p>
-            <h1 className="mt-2 font-display text-3xl uppercase tracking-wide text-ink sm:text-4xl lg:text-[2.75rem]">
-              {product.name}
-            </h1>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink/70">
-              {product.description}
-            </p>
-
-            {/* Buy box */}
-            <div className="mt-8">
-              <ClothingBuyBox product={buyable} image={heroImage} />
-            </div>
-
-            {/* Product details accordion */}
-            <div className="mt-8">
-              <ProductAccordion items={accordionItems} />
-            </div>
-          </div>
-        </section>
+        {/* Product hero: image + info with variant-driven image switching */}
+        <ClothingProductView
+          slug={product.slug}
+          name={product.name}
+          category={product.category}
+          description={product.description}
+          variantType={product.variantType}
+          variants={product.variants}
+          defaultImage={heroImage}
+          accordionItems={accordionItems}
+        />
 
         {/* Product features grid */}
         <section className="border-t border-hairline py-16">

@@ -6,10 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { label: "Shop All", href: "/clothing" },
-  { label: "Tops", href: "/clothing#tops" },
-  { label: "Outerwear", href: "/clothing#outerwear" },
-  { label: "Headwear", href: "/clothing#headwear" },
+  { label: "Clothing", href: "/clothing" },
   { label: "Equipment", href: "/shop" },
   { label: "Guides", href: "/guides" },
   { label: "Contact", href: "/contact" },

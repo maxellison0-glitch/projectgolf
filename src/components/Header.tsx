@@ -35,19 +35,7 @@ export function Header() {
             href="/clothing"
             className="text-ink/70 transition-colors hover:text-royal"
           >
-            Shop All
-          </Link>
-          <Link
-            href="/clothing#tops"
-            className="text-ink/70 transition-colors hover:text-royal"
-          >
-            Tops
-          </Link>
-          <Link
-            href="/clothing#outerwear"
-            className="text-ink/70 transition-colors hover:text-royal"
-          >
-            Outerwear
+            Clothing
           </Link>
           <Link
             href="/shop"

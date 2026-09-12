@@ -8,7 +8,7 @@ import type { Product } from "@/data/products";
 /* Client component: only ever receives these fields. Never pass the full
  * Product here — internal fields (cogsPence, supplierUrl) would serialize
  * into the page payload for anyone to read. */
-export type BuyableProduct = Pick<Product, "slug" | "name" | "category" | "variants">;
+export type BuyableProduct = Pick<Product, "slug" | "name" | "category" | "variants" | "variantType">;
 
 export function BuyBox({ product }: { product: BuyableProduct }) {
   const [variantId, setVariantId] = useState(product.variants[0].id);

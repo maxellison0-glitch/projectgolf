@@ -8,6 +8,7 @@ export type Variant = {
   price: number; // pence
   compareAt?: number; // pence — only where defensible (sum of separates)
   badge?: string;
+  image?: string; // variant-specific image (used for colour variants)
 };
 
 export type Review = {
@@ -26,6 +27,7 @@ export type Product = {
   description: string;
   cogsPence: number; // landed COGS mid-estimate — internal, never rendered
   supplierUrl: string; // AliExpress listing — internal, never rendered
+  variantType?: "size" | "colour"; // drives selector label and image switching
   variants: Variant[];
   benefits: { title: string; body: string }[];
   howItWorks: { step: string; body: string }[];
@@ -344,8 +346,10 @@ export const PRODUCTS: Product[] = [
     description: "Six-panel structured crown cap with pre-curved peak. Gold thread HOP embroidery front and centre, metal clasp adjuster at the back.",
     cogsPence: 600,
     supplierUrl: "TBD",
+    variantType: "colour",
     variants: [
-      { id: "one-size", label: "One Size", price: 2500 },
+      { id: "navy", label: "Navy", price: 2500, image: "/products/clothing/cap-navy.png" },
+      { id: "white", label: "White", price: 2500, image: "/products/clothing/cap-white.png" },
     ],
     benefits: [
       { title: "Structured crown", body: "Six-panel construction that holds its shape — no floppy, formless caps here." },
@@ -359,7 +363,88 @@ export const PRODUCTS: Product[] = [
     ],
     faqs: [...CLOTHING_FAQS],
     reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
-    images: ["/products/clothing/cap-hero.png"],
+    images: ["/products/clothing/cap-navy.png", "/products/clothing/cap-white.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  // ── Accessories ──
+  {
+    slug: "tour-socks",
+    name: "Tour Socks — 3 Pack",
+    category: "Accessories",
+    hook: "From the ground up",
+    subhook: "Full-length cushioned cotton socks with a woven HOP monogram. Three-pack.",
+    description: "Crew-length cushioned cotton socks with the HOP monogram woven near the cuff. Sold as a three-pack in your choice of colourway.",
+    cogsPence: 300,
+    supplierUrl: "TBD",
+    variantType: "colour",
+    variants: [
+      { id: "white", label: "White", price: 1200, image: "/products/clothing/socks-white.png" },
+      { id: "black", label: "Black", price: 1200, image: "/products/clothing/socks-black.png" },
+      { id: "navy", label: "Navy", price: 1200, image: "/products/clothing/socks-navy.png" },
+    ],
+    benefits: [
+      { title: "Cushioned sole", body: "Extra padding underfoot for comfort through 18 holes and the walk back to the car." },
+      { title: "Woven HOP monogram", body: "The monogram is woven into the knit near the cuff — subtle, durable, and part of the fabric." },
+      { title: "Three-pack value", body: "Three pairs per pack so you can rotate through the week without running out." },
+    ],
+    howItWorks: [
+      { step: "Cushioned cotton", body: "Breathable knit with reinforced heel and toe." },
+      { step: "Crew length", body: "Sits below the calf — works with shorts or trousers." },
+      { step: "Woven monogram", body: "HOP cuff detail that lasts as long as the socks." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/socks-white.png", "/products/clothing/socks-black.png", "/products/clothing/socks-navy.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "caddie-towel",
+    name: "Caddie Towel",
+    category: "Accessories",
+    hook: "Kit that earns its clip",
+    subhook: "White waffle-weave microfibre towel with an embroidered crest and carabiner clip.",
+    description: "Waffle-weave microfibre caddie towel with the House of Par crest embroidered in the corner. Carabiner clip attaches to your bag.",
+    cogsPence: 400,
+    supplierUrl: "TBD",
+    variants: [{ id: "single", label: "Caddie Towel", price: 1500 }],
+    benefits: [
+      { title: "Waffle-weave microfibre", body: "Absorbs quickly, dries fast, and stays light on the bag all round." },
+      { title: "Embroidered crest", body: "The House of Par crest stitched in the corner — detail that matches the rest of your kit." },
+      { title: "Carabiner clip", body: "Clips straight onto your bag. No hunting through pockets mid-round." },
+    ],
+    howItWorks: [
+      { step: "Clip it on", body: "Carabiner attaches to any bag loop or ring." },
+      { step: "Waffle weave", body: "Quick-absorbing texture for clubs, balls, and hands." },
+      { step: "Machine washable", body: "Throw it in with your kit after the round." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/towel-hero.png"],
+    guarantee: CLOTHING_GUARANTEE,
+  },
+  {
+    slug: "golf-balls",
+    name: "Golf Balls — Sleeve of 3",
+    category: "Accessories",
+    hook: "Every round, branded",
+    subhook: "Three-piece tour-spec golf balls with the HOP monogram in a branded sleeve.",
+    description: "Three-piece tour-spec golf balls stamped with the HOP monogram. Sold as a sleeve of three in branded packaging.",
+    cogsPence: 300,
+    supplierUrl: "TBD",
+    variants: [{ id: "sleeve", label: "Sleeve of 3", price: 1000 }],
+    benefits: [
+      { title: "Tour-spec construction", body: "Three-piece ball with a soft feel around the greens and distance off the tee." },
+      { title: "HOP monogram stamp", body: "Your ball, your brand — easy to spot on the fairway and in the group." },
+      { title: "Branded sleeve", body: "Arrives in a House of Par sleeve. Makes a good gift or a reason to stock up." },
+    ],
+    howItWorks: [
+      { step: "Three-piece core", body: "Balanced performance: distance, spin, and feel." },
+      { step: "HOP stamped", body: "Gold monogram on each ball." },
+      { step: "Sleeve of 3", body: "Branded packaging, ready to play or gift." },
+    ],
+    faqs: [...CLOTHING_FAQS],
+    reviews: [{ author: "—", rating: 5, title: "Placeholder", body: "Replace with genuine reviews." }],
+    images: ["/products/clothing/golf-balls-hero.png"],
     guarantee: CLOTHING_GUARANTEE,
   },
 ];
@@ -370,6 +455,9 @@ export const CLOTHING_SLUGS = [
   "tour-hoodie",
   "performance-polo",
   "structured-cap",
+  "tour-socks",
+  "caddie-towel",
+  "golf-balls",
 ] as const;
 
 export function getClothingProducts(): Product[] {

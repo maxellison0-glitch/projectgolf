@@ -9,11 +9,17 @@ import type { BuyableProduct } from "@/components/BuyBox";
 export function ClothingBuyBox({
   product,
   image,
+  selectedVariantId,
+  onVariantChange,
 }: {
   product: BuyableProduct;
   image: string;
+  selectedVariantId?: string;
+  onVariantChange?: (id: string) => void;
 }) {
-  const [variantId, setVariantId] = useState(product.variants[0].id);
+  const [internalVariantId, setInternalVariantId] = useState(product.variants[0].id);
+  const variantId = selectedVariantId ?? internalVariantId;
+  const setVariantId = onVariantChange ?? setInternalVariantId;
   const { addItem } = useCart();
   const variant = product.variants.find((v) => v.id === variantId)!;
 
@@ -55,7 +61,9 @@ export function ClothingBuyBox({
       {product.variants.length > 1 && (
         <div className="mt-5">
           <div className="mb-2.5 flex items-center justify-between">
-            <p className="text-sm font-medium text-ink/60">Size</p>
+            <p className="text-sm font-medium text-ink/60">
+              {product.variantType === "colour" ? "Colour" : "Size"}
+            </p>
           </div>
           <div className="flex flex-wrap gap-2">
             {product.variants.map((v) => (
